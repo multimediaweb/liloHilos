@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | LILO HILOS</title>
+<meta name="description" content="La historia detrás de Lilo Hilos, guía de cuidados y consejos para que tu amigurumi dure para siempre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700&display=swap">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Chivo',system-ui,sans-serif;background:#fff;color:#000;overflow-x:hidden}
+a{text-decoration:none;color:#000}
+img{display:block}
+
+/* ---- Promo ---- */
+.promo-bar{background:#D0D0D0;height:clamp(30px,2.2vw,42px);display:flex;align-items:center}
+.promo-bar p{width:100%;text-align:center;font-weight:400;font-size:clamp(11px,calc(1.39vw - 2px),16px)}
+
+/* ---- Header ---- */
+.site-header{border-bottom:1px solid #e5e5e5;background:#fff;position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:center;padding:1.6vw 2vw;gap:3vw}
+.brand{font-weight:700;font-size:clamp(18px,1.7vw,26px);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding:.35em 1em;border-radius:16px;transition:background .2s;flex-shrink:0}
+.brand:hover{background:#F0F0F0}
+.nav{display:flex;align-items:center;gap:3vw}
+.nav-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:.55em 1.2em;font-weight:500;font-size:clamp(12px,1.39vw,17px);border-radius:16px;white-space:nowrap;transition:background-color .2s ease}
+.btn-pink{background:#FFCEF0}.btn-pink:hover{background:#FFE7F8}.btn-pink:active{background:#FF55CB}
+.btn-yellow{background:#FFF5CE}.btn-yellow:hover{background:#FFFAE7}.btn-yellow:active{background:#FFDC55}
+.btn-blue{background:#CED8FF}.btn-blue:hover{background:#E7ECFF}.btn-blue:active{background:#5578FF}
+.btn-green{background:#CEFFDD}.btn-green:hover{background:#E7FFEE}.btn-green:active{background:#55FF89}
+.header-icons{display:flex;align-items:center;gap:.93vw;flex-shrink:0}
+.icon-btn{display:flex;align-items:center;justify-content:center;width:clamp(26px,2vw,34px);height:clamp(26px,2vw,34px);background:none;border:none;cursor:pointer;transition:opacity .2s;position:relative}
+.icon-btn:hover{opacity:.55}
+.icon-btn svg{width:clamp(20px,1.39vw,24px);height:clamp(20px,1.39vw,24px);fill:none;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-wrap{position:relative;display:flex;align-items:center}
+.badge{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;border-radius:8px;background:#FF55CB;color:#fff;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 4px}
+.badge.show{display:flex}
+
+/* ---- Banners (completos, sin recorte) ---- */
+.banner-full{width:100%;height:auto;display:block}
+
+/* ---- Títulos con línea (mismo ancho para todos) ---- */
+.section-title{max-width:1734px;margin:4.06vw auto;padding:0 clamp(16px,4.6vw,80px);display:flex;align-items:center;gap:1.5vw}
+.section-title h2{font-weight:700;font-size:clamp(20px,2.89vw,40px);color:#6B6B6B;white-space:nowrap}
+.section-title .line{flex:1;height:1.5px;background:#CFCFCF;border-radius:2px}
+
+/* ---- Sobre mí (fila con altura fija común: texto e imagen SIEMPRE cuadran) ---- */
+.about{max-width:1734px;margin:0 auto;padding:0 clamp(16px,4.6vw,80px);display:flex;gap:3vw;height:min(749px,52vw)}
+.about-text{flex:0 0 44.4%;height:100%;overflow-y:auto;background:#F6F6F6;border-radius:24px;padding:clamp(18px,2.2vw,34px)}
+.about-text p{font-size:clamp(13px,1.15vw,16px);color:#6B6B6B;line-height:1.75;margin-bottom:16px;text-align:justify}
+.about-text p:last-child{margin-bottom:0}
+.about-img{flex:1;height:100%;border-radius:24px;overflow:hidden;background:#E9D5FF}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text::-webkit-scrollbar{width:8px}
+.about-text::-webkit-scrollbar-track{background:transparent}
+.about-text::-webkit-scrollbar-thumb{background:#C4B5E0;border-radius:4px}
+
+/* ---- Video (recuadro 16:9 fijo, el video se recorta elegante) ---- */
+.video-section{max-width:1734px;margin:0 auto;padding:0 clamp(16px,4.6vw,80px)}
+.video-wrap{aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#2A2A2A;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---- Guía de cuidados ---- */
+.care{max-width:1734px;margin:0 auto;padding:0 clamp(16px,4.6vw,80px);display:flex;gap:3vw;align-items:stretch}
+.care-left{flex:2;display:flex;flex-direction:column;gap:14px}
+.care-right{flex:1;border-radius:24px;overflow:hidden;background:#F5F0FC}
+.care-right img{width:100%;height:100%;object-fit:cover}
+.acc-item{background:#F5F0FC;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;flex:1;min-height:0}
+.acc-item.open{flex:none}
+.acc-btn{width:100%;display:flex;align-items:center;gap:12px;padding:16px 20px;background:#F5F0FC;border:none;cursor:pointer;font-family:inherit;font-size:clamp(14px,1.2vw,17px);font-weight:600;color:#3A3A3A;text-align:left;transition:background .2s;flex-shrink:0}
+.acc-btn:hover{background:#EDE4FA}
+.acc-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#8B6FC0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.acc-arrow{margin-left:auto;flex-shrink:0;width:20px;height:20px;fill:none;stroke:#8B6FC0;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;flex-shrink:0}
+.acc-content{padding:16px 22px;font-size:clamp(13px,1.1vw,15px);color:#6B6B6B;line-height:1.7}
+.acc-item.open .acc-body{max-height:500px}
+
+/* ---- Emergencia ---- */
+.emergency{max-width:1728px;margin:5vw auto 0;padding:0}
+.emergency-grid{aspect-ratio:1728/588;background:#C9D2F5;display:flex;gap:3vw;align-items:stretch;padding:clamp(16px,2.5vw,40px);overflow:hidden}
+.emergency-img{flex:0 0 50%;display:flex;align-items:center;justify-content:center}
+.emergency-img img{width:100%;height:100%;object-fit:contain}
+.emergency-text{flex:1;background:rgba(255,255,255,.55);border-radius:20px;padding:clamp(14px,1.8vw,28px);overflow-y:auto}
+.emergency-text h3{font-size:clamp(15px,1.4vw,21px);color:#3A3A3A;margin-bottom:14px}
+.kit-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.kit-list li{background:rgba(255,255,255,.8);border-radius:14px;padding:12px 16px;font-size:clamp(12px,1vw,14px);color:#4A4A4A;line-height:1.55}
+.kit-list li b{display:block;color:#3A3A3A;margin-bottom:3px}
+.emergency-text::-webkit-scrollbar{width:8px}
+.emergency-text::-webkit-scrollbar-track{background:transparent}
+.emergency-text::-webkit-scrollbar-thumb{background:#8B9BD8;border-radius:4px}
+
+/* ---- Medios de pago ---- */
+.payments{background:#fff;padding:14px 0;border-top:1px solid #eee}
+.payments img{width:100%;height:80px;object-fit:contain}
+
+/* ---- Footer nubes ---- */
+.footer-marquee{width:100%;background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;gap:12px;padding:22px 0}
+.marquee-row-1{display:flex;align-items:center;white-space:nowrap;animation:scrollR 60s linear infinite}
+.marquee-row-2{display:flex;align-items:center;white-space:nowrap;animation:scrollL 75s linear infinite}
+@keyframes scrollR{0%{transform:translateX(-50%)}100%{transform:translateX(0%)}}
+@keyframes scrollL{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
+.marquee-row-1 span{font-size:20px;font-weight:300;color:rgba(255,255,255,.55);padding:0 16px;letter-spacing:.04em}
+.marquee-row-1 span b{font-weight:600;color:rgba(255,255,255,.75)}
+.marquee-row-2 span{font-size:14px;font-weight:400;color:rgba(255,255,255,.5);padding:0 14px;letter-spacing:.12em;text-transform:uppercase}
+.marquee-row-2 span b{font-weight:700;color:rgba(255,255,255,.7)}
+.cloud-sep{display:inline-flex;align-items:center;margin:0 4px;opacity:.6}
+.cloud-sep svg{width:28px;height:16px}
+.marquee-copy{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.1em}
+
+/* ---- Móvil ---- */
+@media (max-width:900px){
+.header-inner{flex-wrap:wrap;gap:.8rem;padding:1rem}
+.nav{gap:.6rem;flex-wrap:wrap;justify-content:center}
+.nav-btn{min-width:140px}
+.about{flex-direction:column;height:auto}
+.about-text{flex:0 0 auto;height:auto;max-height:420px}
+.about-img{flex:0 0 auto;width:100%;max-width:400px;margin:0 auto;height:auto;aspect-ratio:4/5}
+.care{flex-direction:column}
+.care-right{width:100%;max-width:400px;margin:0 auto;min-height:260px}
+.emergency-grid{flex-direction:column;aspect-ratio:auto}
+.emergency-img{flex:0 0 auto;aspect-ratio:3/2}
+.emergency-text{max-height:320px}
+.marquee-row-1 span{font-size:16px}
+.marquee-row-2 span{font-size:11px}
+.cloud-sep svg{width:22px;height:12px}
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></symbol>
+  <symbol id="i-chev-d" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+</svg>
+
+<div class="promo-bar"><p>Compras + $50.000 = 🚚 Envíos volados con amor SIN costo!</p></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">LILO HILOS</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="amigurumis.html" class="nav-btn btn-pink">AMIGURUMIS</a>
+      <a href="funcionales.html" class="nav-btn btn-yellow">FUNCIONALES</a>
+      <a href="blog.html" class="nav-btn btn-blue">BLOG</a>
+      <a href="contacto.html" class="nav-btn btn-green">CONTACTO</a>
+    </nav>
+    <div class="header-icons">
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Mis favoritos" onclick="alert('Los favoritos están en las páginas de productos 💛'); return false;"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></button></span>
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Carrito de compras" onclick="alert('Los pedidos se realizan por WhatsApp 💛'); return false;"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg></button></span>
+      <button class="icon-btn" id="btn-top" aria-label="Ir arriba"><svg viewBox="0 0 24 24"><use href="#i-up"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Banner superior -->
+  <section>
+    <img class="banner-full" src="img/banner_blog.webp" alt="Así nace la historia detrás de Lilo Hilos" fetchpriority="high">
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi">
+    <div class="section-title">
+      <div class="line"></div>
+      <h2>Sobre mi...</h2>
+      <div class="line"></div>
+    </div>
+    <div class="about">
+      <div class="about-text">
+        <p>Siempre supe que quería construir algo que fuera más que un producto: algo que generara conexión, ternura y calma. Cansada de un mundo donde todo se consume y se olvida al instante, decidí crear Lilo Hilos como un refugio de lo auténtico. Aquí, cada amigurumi nace de horas de diseño, hilos cuidadosamente elegidos y la convicción de que lo hecho a mano tiene el poder de tocar el alma.</p>
+        <p>Para mí, tejer no es solo una técnica, es una forma de entrega. Cada punto es una intención, cada costura, un gesto de cariño. Creo firmemente en entregar valor con el corazón: en que un pequeño osito pueda convertirse en el compañero de alguien, en un regalo con historia, en un recordatorio de que lo lento y lo verdadero todavía existen.</p>
+        <p>Hoy trabajo desde mi taller lleno de colores, rodeada de hilos, tijeras y la energía tranquila de quienes apoyan este sueño. Con Lilo Hilos, no solo vendo amigurumis: tejo puentes entre personas, emociones y momentos que merecen ser abrazados —literal y figuradamente.</p>
+        <p>¡Bienvenidx a Lilo Hilos! Este es un rincón donde la magia se teje con hilos suaves, diseños tiernos y mucha intención. Aquí no solo encontrarás amigurumis hechos a mano, sino pequeños seres con alma, creados para acompañarte, regalar con sentido o simplemente recordarte que el mundo puede ser más cálido, uno a uno. Pasa, quédate un rato… y deja que algo hecho con el corazón hable directamente al tuyo.</p>
+        <p>Cada día en el taller es una pequeña ceremonia: elijo los hilos como quien elige palabras para una carta importante, doy forma a los diseños con calma y los despido con la esperanza de que encuentren a quien los necesita. Porque en el fondo, Lilo Hilos nació de una idea simple pero poderosa: que lo hecho a mano puede sanar, conectar y hacer del mundo un lugar un poco más tierno. Y si estás aquí, es porque también crees en eso… así que gracias, de corazón, por formar parte de este mundo.</p>
+      </div>
+      <div class="about-img">
+        <img src="img/autora.webp" alt="La autora de Lilo Hilos en su taller" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Título del video -->
+  <section>
+    <div class="section-title">
+      <div class="line"></div>
+      <h2>Un poco de inspiración en video</h2>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video-section" id="video">
+    <div class="video-wrap">
+      <video controls preload="metadata" poster="img/portada_video.webp">
+        <source src="videos/video_historia.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+    </div>
+  </section>
+
+  <!-- Guía de cuidados -->
+  <section id="cuidados">
+    <div class="section-title">
+      <div class="line"></div>
+      <h2>Amor que dura: Guía de cuidados</h2>
+      <div class="line"></div>
+    </div>
+    <div class="care">
+      <div class="care-left">
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">1</span>¿Cómo limpiar tu amigurumi sin dañarlo?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Los amigurumis no deben lavarse en lavadora. Si se ensucian, limpia suavemente la zona con un paño húmedo y un poco de jabón neutro. Seca al aire libre, lejos del sol directo.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">2</span>¿Cómo secar tu amigurumi luego de lavarlo?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Nunca los seques con secador ni los expongas a fuentes de calor. El calor puede deformar el relleno o dañar los hilos.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">3</span>¿Cómo guardar tu amigurumi correctamente?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Guárdalos en un lugar seco y ventilado, lejos de la humedad y la luz solar intensa. Si los guardas en cajas, asegúrate de que tengan algo de aire para “respirar”.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">4</span>¿Cómo proteger a tu amigurumi con el tiempo?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Evita jalar hilos, ojos de seguridad o accesorios cosidos. Si notas un hilo suelto, no lo tires: córtalo suavemente con tijeras pequeñas o envíanos un mensaje para ayudarte a repararlo. Los detalles son lo que le dan personalidad a tu amigurumi… ¡y merecen ser cuidados con ternura!</div></div>
+        </div>
+
+      </div>
+      <div class="care-right">
+        <img src="img/take_care.webp" alt="Guía de rescate para tu amigurumi" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergencia -->
+  <section class="emergency" id="emergencia">
+    <div class="emergency-grid">
+      <div class="emergency-img">
+        <img src="img/blog_emergencia.webp" alt="Kit de emergencia para tu amigurumi" loading="lazy">
+      </div>
+      <div class="emergency-text">
+        <h3>Lo esencial para tu kit de emergencia 🧰</h3>
+        <ul class="kit-list">
+          <li><b>✂️ Tijeras de punta fina</b>Ideales para recortar hilos sueltos sin dañar la tela o el relleno.</li>
+          <li><b>🧶 Hilos de algodón en colores neutros (blanco, beige, gris) y en tonos base de tus amigurumis</b>Guarda siempre un pequeño ovillo de los mismos hilos que usamos en tus diseños (¡te los enviamos con una nota en cada pedido!).</li>
+          <li><b>🪡 Aguja de zurcir o aguja para lana con ojo grande</b>Perfecta para reparar costuras o reforzar puntos flojos.</li>
+          <li><b>🫙 Pegamento textil (opcional, solo para emergencias extremas)</b>Úsalo solo en zonas no visibles y nunca como reemplazo de coser. Lo ideal es siempre la costura.</li>
+          <li><b>🎀 Una bolsita de tela o cajita bonita</b>Guárdalo todo junto. Así, cuando surja una “emergencia peluda”, ¡sabrás exactamente dónde buscar!</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Medios de pago -->
+<section class="payments" aria-label="Métodos de pago">
+  <img src="img/medios_de_pago.webp" alt="Métodos de pago aceptados" height="80" loading="lazy">
+</section>
+
+<!-- Footer nubes -->
+<footer class="footer-marquee">
+  <div class="marquee-row-1" aria-hidden="true"><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span></div>
+  <div class="marquee-row-2" aria-hidden="true"><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span></div>
+  <span class="marquee-copy">© 2026 Lilo Hilos</span>
+</footer>
+
+<script>
+/* ---- Acordeón: cada pregunta abre/cierra independiente ---- */
+document.querySelectorAll('.acc-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    btn.parentElement.classList.toggle('open');
+  });
+});
+
+/* ---- Botón subir arriba ---- */
+document.getElementById('btn-top').addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+</script>
+
+</body>
+</html>
