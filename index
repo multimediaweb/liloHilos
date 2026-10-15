@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LILO HILOS | Amigurumis y accesorios tejidos a mano</title>
+<meta name="description" content="LILO HILOS — Amigurumis y accesorios funcionales tejidos a mano con amor. Envíos a todo el país, pagos seguros y piezas personalizadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700&display=swap">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Chivo',system-ui,sans-serif;background:#fff;color:#000;overflow-x:hidden}
+a{text-decoration:none;color:#000}
+img{display:block}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---- Promo ---- */
+.promo-bar{background:#D0D0D0;height:clamp(30px,2.2vw,42px);display:flex;align-items:center}
+.promo-bar p{width:100%;text-align:center;font-weight:400;font-size:clamp(11px,calc(1.39vw - 2px),16px)}
+
+/* ---- Header ---- */
+.site-header{border-bottom:1px solid #e5e5e5;background:#fff;position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:center;padding:1.6vw 2vw;gap:3vw}
+.brand{font-weight:700;font-size:clamp(18px,1.7vw,26px);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding:.35em 1em;border-radius:16px;transition:background .2s;flex-shrink:0}
+.brand:hover{background:#F0F0F0}
+.nav{display:flex;align-items:center;gap:3vw}
+.nav-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:.55em 1.2em;font-weight:500;font-size:clamp(12px,1.39vw,17px);border-radius:16px;white-space:nowrap;transition:background-color .2s ease}
+.btn-pink{background:#FFCEF0}.btn-pink:hover{background:#FFE7F8}.btn-pink:active{background:#FF55CB}
+.btn-yellow{background:#FFF5CE}.btn-yellow:hover{background:#FFFAE7}.btn-yellow:active{background:#FFDC55}
+.btn-blue{background:#CED8FF}.btn-blue:hover{background:#E7ECFF}.btn-blue:active{background:#5578FF}
+.btn-green{background:#CEFFDD}.btn-green:hover{background:#E7FFEE}.btn-green:active{background:#55FF89}
+.header-icons{display:flex;align-items:center;gap:.93vw;flex-shrink:0}
+.icon-btn{display:flex;align-items:center;justify-content:center;width:clamp(26px,2vw,34px);height:clamp(26px,2vw,34px);background:none;border:none;cursor:pointer;transition:opacity .2s;position:relative}
+.icon-btn:hover{opacity:.55}
+.icon-btn svg{width:clamp(20px,1.39vw,24px);height:clamp(20px,1.39vw,24px);fill:none;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-wrap{position:relative;display:flex;align-items:center}
+.badge{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;border-radius:8px;background:#FF55CB;color:#fff;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 4px}
+.badge.show{display:flex}
+
+/* ---- Títulos ---- */
+.section-title{display:flex;align-items:center;justify-content:center;gap:1.5vw;margin:4.06vw 0}
+.section-title .stars{display:flex;gap:.4vw}
+.section-title .stars svg{width:clamp(16px,2vw,28px);height:clamp(16px,2vw,28px);fill:#ADD8E6}
+.section-title h2{font-weight:700;font-size:clamp(20px,2.89vw,40px);color:#6B6B6B;white-space:nowrap}
+
+/* ---- Hero ---- */
+.hero{width:100%;max-width:1734px;margin:0 auto;aspect-ratio:1734/313;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover}
+
+/* ---- Tarjetas ---- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5vw;padding:0 clamp(16px,4.6vw,80px) 2vw;max-width:1734px;margin:0 auto}
+.card{background:#fff;border:1px solid #EEE;border-radius:20px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.card-img{position:relative;aspect-ratio:1;background:#F5F5F5;overflow:hidden;cursor:pointer}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease}
+.card-img:hover .card-overlay{opacity:1}
+.card-overlay span{color:#fff;font-size:clamp(11px,1vw,14px);text-align:center;padding:10px}
+.card-body{padding:4% 4% 5%;text-align:center}
+.card-body h3{font-weight:600;font-size:clamp(14px,1.2vw,18px);color:#222;margin-bottom:10px}
+.card-row{display:flex;align-items:center;justify-content:space-between}
+.price{font-weight:700;font-size:clamp(16px,1.5vw,22px)}
+.btn-lo-quiero{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;background:#FFCEF0;color:#000;font-family:inherit;font-weight:500;font-size:clamp(13px,1.2vw,18px);border-radius:16px;border:none;cursor:pointer;transition:background-color .2s ease}
+.btn-lo-quiero:hover{background:#FFE7F8}
+.btn-lo-quiero:active{background:#FF55CB}
+
+/* ---- Banner deslizable ---- */
+.banner-slider{position:relative;width:100%;overflow:hidden}
+.banner-track{display:flex;transition:transform .5s ease-in-out}
+.banner-slide{min-width:100%;aspect-ratio:2400/817;overflow:hidden}
+.banner-slide img{width:100%;height:100%;object-fit:cover}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;width:45px;height:45px;border-radius:50%;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.slider-arrow.prev{left:20px}
+.slider-arrow.next{right:20px}
+
+/* ---- Slider de información ---- */
+.features{position:relative;background:#F6F6F6;height:200px;overflow:hidden;margin-top:4vw}
+.feat-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;padding:0 40px;transition:opacity .9s cubic-bezier(.4,0,.2,1),visibility .9s cubic-bezier(.4,0,.2,1)}
+.feat-slide.active{opacity:1;visibility:visible}
+.slide-inner{display:inline-flex;align-items:center;gap:24px}
+.slide-content{text-align:center}
+.slide-label{font-size:10px;font-weight:500;color:#6B6B6B;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px;opacity:0;transform:translateX(-20px)}
+.feat-slide.active .slide-label{animation:fromLeft .6s cubic-bezier(.23,1,.32,1) .15s forwards}
+.slide-title{font-size:20px;font-weight:400;color:#6B6B6B;margin-bottom:4px;opacity:0;transform:translateX(-20px)}
+.feat-slide.active .slide-title{animation:fromLeft .6s cubic-bezier(.23,1,.32,1) .25s forwards}
+.slide-subtitle{font-size:14px;font-weight:300;color:#6B6B6B;opacity:0;transform:translateX(-20px)}
+.feat-slide.active .slide-subtitle{animation:fromLeft .6s cubic-bezier(.23,1,.32,1) .35s forwards}
+@keyframes fromLeft{to{opacity:1;transform:translateX(0)}}
+.slide-visual{flex:0 0 120px;display:flex;align-items:center;justify-content:center}
+.icon-wrapper{width:110px;height:110px;border-radius:28px;background:rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 10px 40px rgba(0,0,0,.03),0 2px 10px rgba(0,0,0,.02);opacity:0;transform:scale(.85) translateX(30px)}
+.feat-slide.active .icon-wrapper{animation:iconIn .8s cubic-bezier(.23,1,.32,1) .2s forwards}
+@keyframes iconIn{to{opacity:1;transform:scale(1) translateX(0)}}
+.icon-wrapper::before{content:'';position:absolute;width:132px;height:132px;border-radius:34px;border:1.5px solid #D0D0D0;opacity:0}
+.feat-slide.active .icon-wrapper::before{animation:ringIn .8s ease .4s forwards}
+@keyframes ringIn{to{opacity:.8}}
+.icon-wrapper svg{width:44px;height:44px;fill:none;stroke:#999;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.slide-counter{position:absolute;top:14px;right:20px;font-size:11px;color:#6B6B6B;letter-spacing:.08em;z-index:10}
+.nav-arrows{position:absolute;bottom:16px;right:20px;display:flex;gap:8px;z-index:10}
+.nav-arrow{width:34px;height:34px;border-radius:50%;border:1.5px solid #DDD;background:rgba(255,255,255,.6);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s ease}
+.nav-arrow:hover{background:#fff;border-color:#BBB;box-shadow:0 4px 20px rgba(0,0,0,.06);transform:translateY(-2px)}
+.nav-arrow svg{width:14px;height:14px;fill:none;stroke:#6B6B6B;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav-dots{position:absolute;bottom:20px;left:20px;display:flex;gap:10px;z-index:10}
+.dot{width:24px;height:24px;background:none;border:none;padding:0;cursor:pointer;position:relative}
+.dot::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:#D8D8D8;transition:all .4s}
+.dot:hover::after{background:#AAA}
+.dot.active::after{width:22px;height:8px;border-radius:3px;background:#767676}
+
+/* ---- Comentarios ---- */
+.reviews-wrapper{width:100%;height:240px;position:relative;overflow:hidden;background:#fff;margin-top:4vw}
+.review-page{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:flex-start;justify-content:center;padding:30px 5% 35px;opacity:0;visibility:hidden;transition:opacity .8s cubic-bezier(.4,0,.2,1),visibility .8s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.review-page.active{opacity:1;visibility:visible;pointer-events:auto}
+.reviews-slider{display:flex;align-items:center;gap:20px;max-width:1200px;width:100%}
+.review-card{flex:0 0 calc(33.333% - 14px);background:#fff;border-radius:20px;padding:20px;border:1px solid #EEE;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:all .3s ease}
+.review-card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,.1)}
+.review-stars{display:flex;gap:2px;margin-bottom:10px}
+.review-stars svg{width:13px;height:13px;fill:#E2B93B}
+.review-text{font-size:13px;font-weight:400;color:#6B6B6B;line-height:1.5;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-avatar{width:32px;height:32px;border-radius:50%;background:#F5F5F5;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#6B6B6B;flex-shrink:0;border:1px solid #EEE}
+.review-info{display:flex;flex-direction:column}
+.review-name{font-size:12px;font-weight:600;color:#6B6B6B;line-height:1.2}
+.review-detail{font-size:10px;font-weight:400;color:#6B6B6B;line-height:1.3}
+.reviews-nav{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10}
+.reviews-dot{width:24px;height:24px;background:none;border:none;padding:0;cursor:pointer;position:relative}
+.reviews-dot::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:#DDD;transition:all .3s ease}
+.reviews-dot:hover::after{background:#BBB}
+.reviews-dot.active::after{width:22px;height:8px;border-radius:4px;background:#767676}
+.reviews-arrow{position:absolute;top:50%;transform:translateY(-60%);width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid #EEE;box-shadow:0 2px 8px rgba(0,0,0,.06);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:all .25s ease}
+.reviews-arrow:hover{box-shadow:0 4px 14px rgba(0,0,0,.1);border-color:#DDD}
+.reviews-arrow svg{width:14px;height:14px;fill:none;stroke:#6B6B6B;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.reviews-arrow.prev{left:12px}
+.reviews-arrow.next{right:12px}
+
+/* ---- Suscripción ---- */
+.subscribe-wrapper{width:100%;height:200px;display:flex;align-items:center;justify-content:center;padding:0 5%;background:#fff}
+.subscribe-content{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:1200px}
+.subscribe-title{font-size:18px;font-weight:700;color:#6B6B6B;line-height:1.2;margin-bottom:4px}
+.subscribe-text{font-size:15px;font-weight:300;color:#6B6B6B;line-height:1.3;margin-bottom:16px;max-width:560px}
+.form-container{display:flex;gap:12px;align-items:center;width:100%;max-width:500px}
+.input-email{flex:1;height:46px;padding:0 16px;font-family:inherit;font-size:16px;color:#6B6B6B;background:#F6F6F6;border:1.5px solid #E0E0E0;border-radius:12px;outline:none;transition:all .3s ease}
+.input-email::placeholder{color:#6B6B6B;opacity:1}
+.input-email:focus{border-color:#BBB;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.btn-subscribe{height:46px;padding:0 24px;font-family:inherit;font-size:15px;font-weight:600;color:#fff;background:#6B6B6B;border:none;border-radius:12px;cursor:pointer;white-space:nowrap;transition:all .3s ease}
+.btn-subscribe:hover{background:#5a5a5a;transform:translateY(-2px);box-shadow:0 6px 20px rgba(119,119,119,.25)}
+
+/* ---- Columnas footer ---- */
+.footer-nav{width:100%;height:263px;background:#F6F6F6;display:flex;align-items:center;justify-content:center;padding:0 5%}
+.footer-columns{display:flex;gap:120px;max-width:1728px;width:100%;justify-content:center}
+.footer-column{display:flex;flex-direction:column;gap:12px}
+.footer-column-title{font-size:15px;font-weight:700;color:#6B6B6B;line-height:1}
+.footer-column-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-column-list li a{font-size:13px;font-weight:400;color:#6B6B6B;line-height:1;transition:opacity .2s ease;cursor:pointer}
+.footer-column-list li a:hover{opacity:.6}
+
+/* ---- Medios de pago ---- */
+.payments{background:#fff;padding:14px 0;border-top:1px solid #eee}
+.payments img{width:100%;height:80px;object-fit:contain}
+
+/* ---- Footer nubes ---- */
+.footer-marquee{width:100%;background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;gap:12px;padding:22px 0}
+.marquee-row-1{display:flex;align-items:center;white-space:nowrap;animation:scrollR 60s linear infinite}
+.marquee-row-2{display:flex;align-items:center;white-space:nowrap;animation:scrollL 75s linear infinite}
+@keyframes scrollR{0%{transform:translateX(-50%)}100%{transform:translateX(0%)}}
+@keyframes scrollL{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
+.marquee-row-1 span{font-size:20px;font-weight:300;color:rgba(255,255,255,.55);padding:0 16px;letter-spacing:.04em}
+.marquee-row-1 span b{font-weight:600;color:rgba(255,255,255,.75)}
+.marquee-row-2 span{font-size:14px;font-weight:400;color:rgba(255,255,255,.5);padding:0 14px;letter-spacing:.12em;text-transform:uppercase}
+.marquee-row-2 span b{font-weight:700;color:rgba(255,255,255,.7)}
+.cloud-sep{display:inline-flex;align-items:center;margin:0 4px;opacity:.6}
+.cloud-sep svg{width:28px;height:16px}
+.marquee-copy{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.1em}
+
+/* ---- Modal de producto ---- */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:24px;max-width:900px;width:100%;max-height:92vh;overflow-y:auto;position:relative;padding:clamp(20px,3vw,40px);animation:modalIn .3s cubic-bezier(.23,1,.32,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:none;background:#F0F0F0;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:#DDD}
+.modal-brand{text-align:center;font-weight:700;font-size:clamp(22px,2.5vw,32px);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
+.modal-grid{display:flex;gap:clamp(16px,3vw,40px);align-items:flex-start}
+.modal-photo{flex:0 0 45%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#F5F5F5}
+.modal-photo img{width:100%;height:100%;object-fit:cover}
+.modal-info{flex:1;display:flex;flex-direction:column;gap:12px}
+.modal-info h3{font-size:clamp(20px,2vw,28px);font-weight:700;color:#3A3A3A;text-align:center;margin-bottom:4px}
+.modal-actions{display:flex;flex-direction:column;gap:10px}
+.modal-btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;padding:12px 18px;border-radius:12px;border:1.5px solid #C9B8E8;background:#fff;font-family:inherit;font-size:15px;font-weight:500;color:#3A3A3A;cursor:pointer;transition:all .2s ease}
+.modal-btn:hover{background:#F5F0FC;border-color:#A98FD6}
+.modal-btn svg{width:18px;height:18px;fill:none;stroke:#8B6FC0;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.modal-btn.fav-active{background:#FFCEF0;border-color:#FF55CB}
+.modal-btn.fav-active svg{fill:#FF55CB;stroke:#FF55CB}
+.modal-desc{background:#F6F6F6;border-radius:14px;padding:16px 18px;font-size:14px;color:#6B6B6B;line-height:1.55}
+.modal-desc ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.modal-desc li{padding-left:16px;position:relative}
+.modal-desc li::before{content:'•';position:absolute;left:0;color:#8B6FC0;font-weight:700}
+.modal-price{text-align:center;font-size:22px;font-weight:700;margin-top:4px}
+.modal-price small{display:block;font-size:12px;font-weight:400;color:#6B6B6B}
+.modal-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:12px;border:none;background:#FFCEF0;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
+.modal-wa:hover{background:#FFE7F8}
+
+/* ---- Paneles laterales (carrito y favoritos) ---- */
+.cart-panel{position:fixed;top:0;right:0;width:min(380px,100%);height:100%;background:#fff;z-index:1100;box-shadow:-8px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;padding:24px}
+.cart-panel.open{transform:none}
+.cart-panel h3{font-size:20px;margin-bottom:16px}
+.cart-items{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.cart-item{display:flex;justify-content:space-between;align-items:center;background:#F6F6F6;border-radius:12px;padding:12px 14px;font-size:14px}
+.cart-item button{background:none;border:none;cursor:pointer;font-size:16px;color:#B00;padding:4px 8px}
+.cart-empty{color:#999;text-align:center;margin-top:30px;font-size:14px}
+.cart-actions{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1050;display:none}
+.cart-overlay.open{display:block}
+
+/* ---- Móvil ---- */
+@media (max-width:900px){
+.gallery{grid-template-columns:repeat(2,1fr)}
+.header-inner{flex-wrap:wrap;gap:.8rem;padding:1rem}
+.nav{gap:.6rem;flex-wrap:wrap;justify-content:center}
+.nav-btn{min-width:140px}
+.features{height:300px}
+.feat-slide{flex-direction:column;gap:12px}
+.slide-inner{flex-direction:column;gap:12px}
+.icon-wrapper{width:90px;height:90px;border-radius:22px}
+.icon-wrapper::before{width:110px;height:110px;border-radius:28px}
+.icon-wrapper svg{width:36px;height:36px}
+.reviews-wrapper{height:340px}
+.review-page{height:340px;padding:30px 5% 40px}
+.reviews-slider{flex-direction:column;gap:14px}
+.review-card{flex:0 0 auto;width:100%}
+.review-text{-webkit-line-clamp:2}
+.reviews-arrow{display:none}
+.subscribe-wrapper{height:300px}
+.footer-nav{height:auto;padding:40px 6%}
+.footer-columns{gap:36px;flex-wrap:wrap;justify-content:flex-start}
+.footer-column{min-width:calc(50% - 18px)}
+.marquee-row-1 span{font-size:16px}
+.marquee-row-2 span{font-size:11px}
+.cloud-sep svg{width:22px;height:12px}
+.modal-grid{flex-direction:column}
+.modal-photo{flex:0 0 auto;width:100%;max-width:340px;margin:0 auto}
+}
+@media (max-width:500px){
+.gallery{grid-template-columns:1fr}
+.section-title h2{white-space:normal;font-size:22px;text-align:center}
+.features{height:280px}
+.payments img{height:60px}
+.reviews-wrapper{height:320px}
+.review-page{height:320px}
+.review-card{padding:16px}
+.review-text{font-size:12px}
+.subscribe-wrapper{height:280px}
+.form-container{max-width:100%}
+.btn-subscribe{padding:0 18px;font-size:14px}
+.footer-columns{gap:28px}
+.footer-column{min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- Íconos reutilizables -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-feather" viewBox="0 0 24 24"><path d="M12.67 19a2 2 0 0 0 1.42-.59l6.15-6.17a6 6 0 0 0-8.49-8.49L5.59 9.91A2 2 0 0 0 5 11.33V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol>
+</svg>
+
+<div class="promo-bar"><p>Compras + $50.000 = 🚚 Envíos volados con amor SIN costo!</p></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">LILO HILOS</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="amigurumis.html" class="nav-btn btn-pink">AMIGURUMIS</a>
+      <a href="funcionales.html" class="nav-btn btn-yellow">FUNCIONALES</a>
+      <a href="blog.html" class="nav-btn btn-blue">BLOG</a>
+      <a href="contacto.html" class="nav-btn btn-green">CONTACTO</a>
+    </nav>
+    <div class="header-icons">
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Mis favoritos" id="btn-fav"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></button><span class="badge" id="fav-badge"></span></span>
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Carrito de compras" id="btn-cart"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg></button><span class="badge" id="cart-badge"></span></span>
+      <button class="icon-btn" id="btn-top" aria-label="Ir arriba"><svg viewBox="0 0 24 24"><use href="#i-up"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<h1 class="sr-only">LILO HILOS — Amigurumis y accesorios tejidos a mano</h1>
+
+<main id="inicio">
+
+  <section class="hero">
+    <img src="img/banner_home.webp" alt="Amigurumis kawaii" width="1734" height="313" fetchpriority="high">
+  </section>
+
+  <!-- AMIGURUMIS -->
+  <section id="amigurumis" style="scroll-margin-top:120px">
+    <div class="section-title">
+      <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+      <h2>Recomendaciones con cariño</h2>
+      <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+    </div>
+    <div class="gallery">
+      <article class="card"><div class="card-img" data-producto="Sueño de Bambú"><img src="img/sueno_de_bambu.webp" alt="Sueño de Bambú" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Sueño de Bambú</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Sueño de Bambú">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Sueño de Caparazón"><img src="img/sueno_de_caparazon.webp" alt="Sueño de Caparazón" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Sueño de Caparazón</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Sueño de Caparazón">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Abrazo Profundo"><img src="img/abrazo_profundo.webp" alt="Abrazo Profundo" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Abrazo Profundo</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Abrazo Profundo">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Besitos de Leche"><img src="img/besitos_de_leche.webp" alt="Besitos de Leche" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Besitos de Leche</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Besitos de Leche">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Canción de Rayos"><img src="img/cancion_de_rayos.webp" alt="Canción de Rayos" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Canción de Rayos</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Canción de Rayos">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Abrazo de Arena"><img src="img/abrazo_de_arena.webp" alt="Abrazo de Arena" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Abrazo de Arena</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Abrazo de Arena">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Besos de Marea"><img src="img/besos_de_marea.webp" alt="Besos de Marea" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Besos de Marea</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Besos de Marea">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Besos de Polen"><img src="img/besos_de_polen.webp" alt="Besos de Polen" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Besos de Polen</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Besos de Polen">Lo quiero</button></div></div></article>
+    </div>
+  </section>
+
+  <!-- Banner deslizable -->
+  <section class="banner-slider" aria-label="Promociones">
+    <div class="banner-track" id="bannerTrack">
+      <div class="banner-slide"><img src="img/tarjeta_como_funciona_1.webp" alt="Banner promocional 1" width="1340" height="456"></div>
+      <div class="banner-slide"><img src="img/tarjeta_como_funciona_2.webp" alt="Banner promocional 2" width="1340" height="456" loading="lazy"></div>
+      <div class="banner-slide"><img src="img/tarjeta_como_funciona_3.webp" alt="Banner promocional 3" width="1340" height="456" loading="lazy"></div>
+    </div>
+    <button class="slider-arrow prev" aria-label="Banner anterior">❮</button>
+    <button class="slider-arrow next" aria-label="Banner siguiente">❯</button>
+  </section>
+
+  <!-- FUNCIONALES -->
+  <section id="funcionales" style="scroll-margin-top:120px">
+    <div class="section-title">
+      <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+      <h2>Recomendaciones con cariño</h2>
+      <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+    </div>
+    <div class="gallery">
+      <article class="card"><div class="card-img" data-producto="Cartuchera"><img src="img/cartuchera.webp" alt="Cartuchera" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Cartuchera</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Cartuchera">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Llavero"><img src="img/llavero.webp" alt="Llavero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Llavero</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Llavero">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Cortinero"><img src="img/cortinero.webp" alt="Cortinero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Cortinero</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Cortinero">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Bolsa de la compra"><img src="img/bolsa.webp" alt="Bolsa de la compra" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Bolsa de la compra</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Bolsa de la compra">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Esferas de navidad"><img src="img/esferas.webp" alt="Esferas de navidad" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Esferas de navidad</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Esferas de navidad">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Bolso de mano"><img src="img/bolso.webp" alt="Bolso de mano" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Bolso de mano</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Bolso de mano">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Monedero"><img src="img/monedero.webp" alt="Monedero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Monedero</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Monedero">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Móvil para bebé"><img src="img/movil.webp" alt="Móvil para bebé" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Móvil para bebé</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Móvil para bebé">Lo quiero</button></div></div></article>
+    </div>
+  </section>
+
+  <!-- Slider de información -->
+  <section class="features" id="features" aria-label="Información de la tienda">
+    <div class="slide-counter"><span id="feat-num">01</span> / 04</div>
+
+    <div class="feat-slide active">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <p class="slide-label">Formas de pago</p>
+          <h2 class="slide-title">Paga como te sea más fácil</h2>
+          <p class="slide-subtitle">Elige la opción con la que te sientas más cómodo.</p>
+        </div>
+        <div class="slide-visual"><div class="icon-wrapper"><svg viewBox="0 0 24 24"><use href="#i-card"/></svg></div></div>
+      </div>
+    </div>
+
+    <div class="feat-slide">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <p class="slide-label">Envíos</p>
+          <h2 class="slide-title">Envíos volados con amor</h2>
+          <p class="slide-subtitle">En compras superiores a $50.000 el envío es gratis.</p>
+        </div>
+        <div class="slide-visual"><div class="icon-wrapper"><svg viewBox="0 0 24 24"><use href="#i-truck"/></svg></div></div>
+      </div>
+    </div>
+
+    <div class="feat-slide">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <p class="slide-label">Materiales</p>
+          <h2 class="slide-title">Suaves por fuera, firmes por dentro</h2>
+          <p class="slide-subtitle">Espuma de relleno que conserva la forma de cada pieza.</p>
+        </div>
+        <div class="slide-visual"><div class="icon-wrapper"><svg viewBox="0 0 24 24"><use href="#i-feather"/></svg></div></div>
+      </div>
+    </div>
+
+    <div class="feat-slide">
+      <div class="slide-inner">
+        <div class="slide-content">
+          <p class="slide-label">Hecho a mano</p>
+          <h2 class="slide-title">Cada pieza es única</h2>
+          <p class="slide-subtitle">Tejida punto por punto, con cariño y dedicación.</p>
+        </div>
+        <div class="slide-visual"><div class="icon-wrapper"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></div></div>
+      </div>
+    </div>
+
+    <div class="nav-arrows">
+      <button class="nav-arrow" data-dir="-1" aria-label="Mensaje anterior"><svg viewBox="0 0 24 24"><use href="#i-chev-l"/></svg></button>
+      <button class="nav-arrow" data-dir="1" aria-label="Mensaje siguiente"><svg viewBox="0 0 24 24"><use href="#i-chev-r"/></svg></button>
+    </div>
+    <div class="nav-dots" id="featDots">
+      <button class="dot active" aria-label="Ir al mensaje 1"></button>
+      <button class="dot" aria-label="Ir al mensaje 2"></button>
+      <button class="dot" aria-label="Ir al mensaje 3"></button>
+      <button class="dot" aria-label="Ir al mensaje 4"></button>
+    </div>
+  </section>
+
+  <!-- Comentarios -->
+  <section class="reviews-wrapper" id="reviewsWrapper" aria-label="Reseñas de clientes">
+    <button class="reviews-arrow prev" id="revPrev" aria-label="Reseñas anteriores"><svg viewBox="0 0 24 24"><use href="#i-chev-l"/></svg></button>
+    <button class="reviews-arrow next" id="revNext" aria-label="Reseñas siguientes"><svg viewBox="0 0 24 24"><use href="#i-chev-r"/></svg></button>
+
+    <div class="review-page active">
+      <div class="reviews-slider">
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Le regalé el pandita a mi sobrina y no lo suelta ni para dormir. Los puntitos del tejido se ven perfectos, se nota que está hecho con mucho cariño.</p><div class="review-author"><div class="review-avatar">V</div><div class="review-info"><span class="review-name">Valentina Rojas</span><span class="review-detail">Panda · Diciembre 2024</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Ya es mi tercer pedido y cada uno llega mejor que el anterior. El envuelto que usan es adorable, parece un regalito listo para entregar.</p><div class="review-author"><div class="review-avatar">C</div><div class="review-info"><span class="review-name">Camila Fernández</span><span class="review-detail">Tortuga · Noviembre 2024</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">La vaquita me llegó en dos días y superó mis expectativas. El hilo es súper suave y los colores exactos a la foto. 100% recomendado.</p><div class="review-author"><div class="review-avatar">S</div><div class="review-info"><span class="review-name">Sofía Morales</span><span class="review-detail">Vaca · Enero 2025</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="review-page">
+      <div class="reviews-slider">
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Compré la ballena para decorar la habitación del bebé. Es más bonita en persona que en las fotos. Mi esposo quería quedársela.</p><div class="review-author"><div class="review-avatar">M</div><div class="review-info"><span class="review-name">María José López</span><span class="review-detail">Ballena · Diciembre 2024</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Pedí uno personalizado para mi mamá con los colores que ella quiere. Quedó espectacular y el detalle de la tarjetita me hizo llorar.</p><div class="review-author"><div class="review-avatar">L</div><div class="review-info"><span class="review-name">Luciana Torres</span><span class="review-detail">Personalizado · Enero 2025</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Lo compré como detalle de cumpleaños y fue el regalo más comentado de la fiesta. Todos preguntaron de dónde era. Ya les pasé el link.</p><div class="review-author"><div class="review-avatar">A</div><div class="review-info"><span class="review-name">Andrea Gutiérrez</span><span class="review-detail">Panda · Febrero 2025</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="review-page">
+      <div class="reviews-slider">
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Mi hija lo vio en la página y no paró hasta que se lo compré. Cuando llegó no quería creer lo suavecito que era. Ya pedimos otro.</p><div class="review-author"><div class="review-avatar">P</div><div class="review-info"><span class="review-name">Patricia Duarte</span><span class="review-detail">Tortuga · Febrero 2025</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Es el tercer amigurumi que le compro y la calidad es consistente. Los detalles de la cara me parecen increíbles, se nota el trabajo artesanal.</p><div class="review-author"><div class="review-avatar">D</div><div class="review-info"><span class="review-name">Daniela Ramos</span><span class="review-detail">Ballena · Enero 2025</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Lo quería para mí, pero terminé regalándolo. La próxima me compro dos: uno para regalar y otro que nadie me toque.</p><div class="review-author"><div class="review-avatar">J</div><div class="review-info"><span class="review-name">Javiera Contreras</span><span class="review-detail">Panda · Diciembre 2024</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="review-page">
+      <div class="reviews-slider">
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Me llegó el viernes y ya para el lunes mis compañeras del trabajo me estaban pidiendo el link. Es hermoso, súper bien hecho.</p><div class="review-author"><div class="review-avatar">F</div><div class="review-info"><span class="review-name">Francisca Aguilar</span><span class="review-detail">Vaca · Febrero 2025</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Escribí preguntando por un color especial y me respondieron al toque. El resultado fue exactamente lo que imaginaba. Servicio 10/10.</p><div class="review-author"><div class="review-avatar">I</div><div class="review-info"><span class="review-name">Isidora Vera</span><span class="review-detail">Personalizado · Marzo 2025</span></div></div></div>
+        <div class="review-card"><div class="review-stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div><p class="review-text">Se lo regalé a mi novio y no sabe si ponerlo en la mesa de noche o en el escritorio. Va a tener que comprar otro porque yo también quiero.</p><div class="review-author"><div class="review-avatar">T</div><div class="review-info"><span class="review-name">Teresa Muñoz</span><span class="review-detail">Tortuga · Enero 2025</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="reviews-nav" id="reviewsNav">
+      <button class="reviews-dot active" aria-label="Ir a la página de reseñas 1"></button>
+      <button class="reviews-dot" aria-label="Ir a la página de reseñas 2"></button>
+      <button class="reviews-dot" aria-label="Ir a la página de reseñas 3"></button>
+      <button class="reviews-dot" aria-label="Ir a la página de reseñas 4"></button>
+    </div>
+  </section>
+
+  <!-- Suscripción -->
+  <section class="subscribe-wrapper">
+    <div class="subscribe-content">
+      <h2 class="subscribe-title">Emails más suaves que un amigurumi ✉️🧸</h2>
+      <p class="subscribe-text">Únete y recibe noticias de nuevos muñecos, regalitos sorpresa y promociones exclusivas.</p>
+      <form class="form-container" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+        <input type="email" class="input-email" placeholder="Email" aria-label="Tu correo electrónico" required>
+        <button type="submit" class="btn-subscribe">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Columnas del footer -->
+  <nav class="footer-nav" aria-label="Enlaces de interés">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <span class="footer-column-title">Tienda</span>
+        <ul class="footer-column-list">
+          <li><a onclick="alert('🚚 Esta sección está en tejedura… ¡muy pronto! 💛'); return false;">Envíos</a></li>
+          <li><a onclick="alert('🧸 Esta sección está en tejedura… ¡muy pronto! 💛'); return false;">Amigurumis</a></li>
+          <li><a onclick="alert('🧺 Esta sección está en tejedura… ¡muy pronto! 💛'); return false;">Funcionales</a></li>
+          <li><a onclick="alert('🏡 Esta sección está en tejedura… ¡muy pronto! 💛'); return false;">Inicio</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <span class="footer-column-title">Ayuda</span>
+        <ul class="footer-column-list">
+          <li><a onclick="alert('💳 En tejedura… ¡muy pronto! 💛'); return false;">Formas de pago</a></li>
+          <li><a onclick="alert('🧶 En tejedura… ¡muy pronto! 💛'); return false;">Materiales</a></li>
+          <li><a onclick="alert('⏰ En tejedura… ¡muy pronto! 💛'); return false;">Horario de atención</a></li>
+          <li><a onclick="alert('💌 En tejedura… ¡muy pronto! 💛'); return false;">Centro de ayuda</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <span class="footer-column-title">Información legal</span>
+        <ul class="footer-column-list">
+          <li><a onclick="alert('📄 En tejedura… ¡muy pronto! 💛'); return false;">Términos de servicio</a></li>
+          <li><a onclick="alert('🔒 En tejedura… ¡muy pronto! 💛'); return false;">Política de privacidad</a></li>
+          <li><a onclick="alert('🍪 En tejedura… ¡muy pronto! 💛'); return false;">Declaración de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</main>
+
+<!-- Medios de pago -->
+<section class="payments" aria-label="Métodos de pago">
+  <img src="img/medios_de_pago.webp" alt="Métodos de pago aceptados" height="80" loading="lazy">
+</section>
+
+<!-- Footer con nubes -->
+<footer class="footer-marquee">
+  <div class="marquee-row-1" aria-hidden="true"><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span></div>
+  <div class="marquee-row-2" aria-hidden="true"><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span></div>
+  <span class="marquee-copy">© 2026 Lilo Hilos</span>
+</footer>
+
+<!-- Modal de producto -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar ventana">✕</button>
+    <div class="modal-brand">LILO HILOS</div>
+    <div class="modal-grid">
+      <div class="modal-photo"><img id="modalImg" src="" alt="" width="480" height="480"></div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <div class="modal-actions">
+          <button class="modal-btn" id="btnFav"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg><span id="btnFavText">Agregar a favoritos</span></button>
+          <button class="modal-btn" id="btnCartAdd"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg>Agregar al carrito</button>
+          <button class="modal-btn" id="btnShare"><svg viewBox="0 0 24 24"><use href="#i-share"/></svg>Compártelo en redes</button>
+        </div>
+        <div class="modal-price"><span id="modalPrice"></span><small>precio de referencia · pedido por WhatsApp</small></div>
+        <div class="modal-desc">
+          <p id="modalDesc"></p>
+          <ul id="modalBullets"></ul>
+        </div>
+        <button class="modal-wa" id="btnWa">Lo quiero por WhatsApp 💬</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Favoritos -->
+<div class="cart-overlay" id="favOverlay"></div>
+<aside class="cart-panel" id="favPanel" aria-label="Mis favoritos">
+  <h3>Tus favoritos 💛</h3>
+  <div class="cart-items" id="favItems"><p class="cart-empty">Aún no tienes favoritos…</p></div>
+  <div class="cart-actions">
+    <button class="modal-btn" id="favClose">Seguir mirando</button>
+  </div>
+</aside>
+
+<!-- Carrito -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
+  <h3>Tu carrito 🧺</h3>
+  <div class="cart-items" id="cartItems"><p class="cart-empty">Tu carrito está vacío por ahora…</p></div>
+  <div class="cart-actions">
+    <button class="modal-wa" id="cartCheckout">Pedir por WhatsApp 💬</button>
+    <button class="modal-btn" id="cartClose">Seguir mirando</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  /* ⚠️ TU NÚMERO DE WHATSAPP AQUÍ (código de país + número, sin + ni espacios) */
+  var WHATSAPP = '573001234567';
+
+  /* ============ DATOS DE PRODUCTOS ============ */
+  var PRODUCTOS = {
+    'Sueño de Bambú': { img:'img/sueno_de_bambu.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y espuma de relleno. Ideal para abrazos tiernos, regalos con alma o compañía en días tranquilos.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con espuma de relleno hipoalergénica','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Sueño de Caparazón': { img:'img/sueno_de_caparazon.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y microesferas de relleno. Ideal para quienes buscan calma, compañía en días lentos o un regalo con alma para alguien que necesita paciencia y ternura.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con microesferas de relleno hipoalergénica','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Abrazo Profundo': { img:'img/abrazo_profundo.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y espuma de relleno. Ideal para quienes necesitan un abrazo tranquilo, compañía en días de introspección o un regalo con alma para alguien que navega emociones profundas.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con espuma de relleno hipoalergénica','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Besitos de Leche': { img:'img/besitos_de_leche.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y algodón natural de relleno. Ideal para abrazos tiernos, regalos de bienvenida o compañía en las noches de sueño profundo.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con algodón natural hipoalergénico','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Canción de Rayos': { img:'img/cancion_de_rayos.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y vellón silicado. Ideal para quienes buscan un poco de sol en sus manos, compañía en días grises o un regalo con alma para quien necesita una sonrisa.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con vellón silicado hipoalergénico','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Abrazo de Arena': { img:'img/abrazo_de_arena.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y relleno de algodón natural. Ideal para quienes buscan un compañero con carácter, regalos con estilo o compañía en días de calma desértica y corazón.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con algodón hipoalergénico','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Besos de Marea': { img:'img/besos_de_marea.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y espuma de relleno. Ideal para quienes buscan un compañero tranquilo, regalos con movimiento o compañía en días de marea alta y corazón abierto.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con espuma de relleno hipoalergénico','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Besos de Polen': { img:'img/besos_de_polen.webp', precio:'99.000',
+      desc:'Amigurumi hecho a mano con algodón suave y microesferas. Ideal para quienes buscan un compañero alegre, regalos con energía o compañía en días que necesitan un poco de luz y movimiento.',
+      bullets:['Talla S / M / L','Algodón 100% + botones de seguridad','Relleno con microesferas hipoalergénicas','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Cartuchera': { img:'img/cartuchera.webp', precio:'99.000',
+      desc:'Hecha a mano en crochet de algodón, ideal para guardar lápices, brochas o pequeños tesoros con orden y cariño. Perfecta para estudiantes, artistas o quienes aman llevar sus herramientas rodeadas de suavidad.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Llavero': { img:'img/llavero.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes quieren llevar sus llaves con suavidad, sin ruido ni raspones. Perfecto para el día a día, regalo práctico o detalle pequeño que cuida lo esencial con cariño.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Cortinero': { img:'img/cortinero.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman los detalles que transforman una casa en hogar. Perfecto para mantener la luz suave, regalo para amantes del hogar o detalle que une lo práctico con lo tierno.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Bolsa de la compra': { img:'img/bolsa.webp', precio:'99.000',
+      desc:'Hecha a mano en crochet de algodón, ideal para quienes quieren llevar sus compras con estilo, conciencia y un toque de ternura. Perfecta para el mercado, regalo sostenible o detalle que cuida del planeta y del corazón.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Esferas de navidad': { img:'img/esferas.webp', precio:'99.000',
+      desc:'Hechas a mano en crochet de algodón, ideales para decorar tu árbol con calma, tradición y un toque artesanal. Perfectas como regalo navideño, detalle para intercambios o adornos que guardan historias, no solo luces.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Bolso de mano': { img:'img/bolso.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes buscan un compañero práctico y dulce que lleve sus esenciales con estilo. Perfecto para salir, regalo para amigas o detalle que combina funcionalidad con alma artesanal.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Monedero': { img:'img/monedero.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman llevar sus monedas con estilo y ligereza. Perfecto para el bolsillo, regalo pequeño con alma o detalle que vuelve lo cotidiano un poco más tierno.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Móvil para bebé': { img:'img/movil.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para colgar sobre la cuna y envolver al bebé en un cielo suave y tranquilo. Perfecto como regalo de bienvenida, detalle con alma o primer compañero de sueños.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] }
+  };
+
+  /* ============ MODAL ============ */
+  var overlay = document.getElementById('modalOverlay');
+  var modalImg = document.getElementById('modalImg');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalDesc = document.getElementById('modalDesc');
+  var modalBullets = document.getElementById('modalBullets');
+  var modalPrice = document.getElementById('modalPrice');
+  var productoActual = null;
+  var favoritos = [];
+  var carrito = [];
+
+  function abrirModal(nombre){
+    var p = PRODUCTOS[nombre];
+    if (!p) return;
+    productoActual = nombre;
+    modalImg.src = p.img; modalImg.alt = nombre;
+    modalTitle.textContent = nombre;
+    modalDesc.textContent = p.desc;
+    modalPrice.textContent = p.precio;
+    modalBullets.innerHTML = p.bullets.map(function(b){ return '<li>' + b + '</li>'; }).join('');
+    var esFav = favoritos.indexOf(nombre) !== -1;
+    btnFav.classList.toggle('fav-active', esFav);
+    btnFavText.textContent = esFav ? '¡Está en tus favoritos!' : 'Agregar a favoritos';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function cerrarModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.card-img').forEach(function(c){
+    c.addEventListener('click', function(){ abrirModal(c.dataset.producto); });
+  });
+  document.getElementById('modalClose').addEventListener('click', cerrarModal);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) cerrarModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ cerrarModal(); cerrarCarrito(); cerrarFavoritos(); } });
+
+  /* "Lo quiero" agrega al carrito */
+  document.querySelectorAll('.btn-lo-quiero').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var nombre = btn.dataset.nombre;
+      if (!nombre || carrito.indexOf(nombre) === -1){
+        if (nombre){ carrito.push(nombre); }
+        actualizarCarrito();
+      }
+      abrirCarrito();
+    });
+  });
+  document.getElementById('btnWa').addEventListener('click', function(){
+    if (productoActual) window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hola LILO HILOS, quiero "' + productoActual + '" 😍'), '_blank');
+  });
+
+  /* ============ FAVORITOS ============ */
+  var btnFav = document.getElementById('btnFav');
+  var btnFavText = document.getElementById('btnFavText');
+  var favPanel = document.getElementById('favPanel');
+  var favOverlay = document.getElementById('favOverlay');
+  function actualizarFavBadge(){
+    var b = document.getElementById('fav-badge');
+    if (favoritos.length){ b.textContent = favoritos.length; b.classList.add('show'); }
+    else b.classList.remove('show');
+  }
+  function actualizarFavoritos(){
+    actualizarFavBadge();
+    var zona = document.getElementById('favItems');
+    if (!favoritos.length){ zona.innerHTML = '<p class="cart-empty">Aún no tienes favoritos…</p>'; return; }
+    zona.innerHTML = favoritos.map(function(n, i){
+      return '<div class="cart-item"><span>' + n + '</span><button data-i="' + i + '" aria-label="Quitar ' + n + ' de favoritos">✕</button></div>';
+    }).join('');
+    zona.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        favoritos.splice(parseInt(btn.dataset.i),1);
+        actualizarFavoritos();
+        if (productoActual){
+          var esFav = favoritos.indexOf(productoActual) !== -1;
+          btnFav.classList.toggle('fav-active', esFav);
+          btnFavText.textContent = esFav ? '¡Está en tus favoritos!' : 'Agregar a favoritos';
+        }
+      });
+    });
+  }
+  function abrirFavoritos(){ actualizarFavoritos(); favPanel.classList.add('open'); favOverlay.classList.add('open'); }
+  function cerrarFavoritos(){ favPanel.classList.remove('open'); favOverlay.classList.remove('open'); }
+  document.getElementById('btn-fav').addEventListener('click', abrirFavoritos);
+  document.getElementById('favClose').addEventListener('click', cerrarFavoritos);
+  favOverlay.addEventListener('click', cerrarFavoritos);
+  btnFav.addEventListener('click', function(){
+    if (!productoActual) return;
+    var i = favoritos.indexOf(productoActual);
+    if (i === -1){ favoritos.push(productoActual); btnFav.classList.add('fav-active'); btnFavText.textContent = '¡Está en tus favoritos!'; }
+    else { favoritos.splice(i,1); btnFav.classList.remove('fav-active'); btnFavText.textContent = 'Agregar a favoritos'; }
+    actualizarFavoritos();
+  });
+
+  /* Compartir */
+  document.getElementById('btnShare').addEventListener('click', function(){
+    var texto = 'Mira este producto de LILO HILOS: ' + productoActual + ' 🧸 ' + location.href;
+    if (navigator.share){ navigator.share({ title:'LILO HILOS', text:texto, url:location.href }).catch(function(){}); }
+    else { navigator.clipboard.writeText(texto); alert('¡Link copiado! Ya puedes pegarlo donde quieras 💌'); }
+  });
+
+  /* ============ CARRITO ============ */
+  var cartPanel = document.getElementById('cartPanel');
+  var cartOverlay = document.getElementById('cartOverlay');
+  function actualizarCarrito(){
+    var b = document.getElementById('cart-badge');
+    if (carrito.length){ b.textContent = carrito.length; b.classList.add('show'); }
+    else b.classList.remove('show');
+    var zona = document.getElementById('cartItems');
+    if (!carrito.length){ zona.innerHTML = '<p class="cart-empty">Tu carrito está vacío por ahora…</p>'; return; }
+    zona.innerHTML = carrito.map(function(n, i){
+      return '<div class="cart-item"><span>' + n + '</span><button data-i="' + i + '" aria-label="Quitar ' + n + '">✕</button></div>';
+    }).join('');
+    zona.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){ carrito.splice(parseInt(btn.dataset.i),1); actualizarCarrito(); });
+    });
+  }
+  function abrirCarrito(){ cartPanel.classList.add('open'); cartOverlay.classList.add('open'); }
+  function cerrarCarrito(){ cartPanel.classList.remove('open'); cartOverlay.classList.remove('open'); }
+  document.getElementById('btn-cart').addEventListener('click', abrirCarrito);
+  document.getElementById('cartClose').addEventListener('click', cerrarCarrito);
+  cartOverlay.addEventListener('click', cerrarCarrito);
+  document.getElementById('btnCartAdd').addEventListener('click', function(){
+    if (!productoActual) return;
+    if (carrito.indexOf(productoActual) === -1){ carrito.push(productoActual); actualizarCarrito(); }
+    cerrarModal();
+    abrirCarrito();
+  });
+  document.getElementById('cartCheckout').addEventListener('click', function(){
+    if (!carrito.length){ alert('Tu carrito está vacío todavía 🧺'); return; }
+    var msg = 'Hola LILO HILOS, quiero hacer un pedido 😍\n\n' + carrito.map(function(n,i){ return (i+1) + '. ' + n; }).join('\n');
+    window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+  });
+
+  /* Botón subir arriba */
+  document.getElementById('btn-top').addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* ---- Banner deslizable ---- */
+  var track = document.getElementById('bannerTrack');
+  var slides = track ? track.children.length : 0;
+  var bannerIdx = 0;
+  function goBanner(i){
+    bannerIdx = (i + slides) % slides;
+    if (track) track.style.transform = 'translateX(-' + (bannerIdx * 100) + '%)';
+  }
+  document.querySelector('.slider-arrow.prev').addEventListener('click', function(){ goBanner(bannerIdx - 1); });
+  document.querySelector('.slider-arrow.next').addEventListener('click', function(){ goBanner(bannerIdx + 1); });
+  setInterval(function(){ goBanner(bannerIdx + 1); }, 5000);
+
+  /* ---- Slider de información ---- */
+  var feats = document.querySelectorAll('.feat-slide');
+  var dots = document.querySelectorAll('#featDots .dot');
+  var featNum = document.getElementById('feat-num');
+  var featIdx = 0;
+  function goFeat(i){
+    featIdx = (i + feats.length) % feats.length;
+    feats.forEach(function(f, n){ f.classList.toggle('active', n === featIdx); });
+    dots.forEach(function(d, n){ d.classList.toggle('active', n === featIdx); });
+    if (featNum) featNum.textContent = String(featIdx + 1).padStart(2, '0');
+  }
+  document.querySelectorAll('.nav-arrow').forEach(function(a){
+    a.addEventListener('click', function(){ goFeat(featIdx + parseInt(a.dataset.dir)); });
+  });
+  dots.forEach(function(d, n){ d.addEventListener('click', function(){ goFeat(n); }); });
+  setInterval(function(){ goFeat(featIdx + 1); }, 6000);
+
+  /* ---- Reseñas ---- */
+  var pages = document.querySelectorAll('.review-page');
+  var revDots = document.querySelectorAll('#reviewsNav .reviews-dot');
+  var revIdx = 0;
+  function goRev(i){
+    revIdx = (i + pages.length) % pages.length;
+    pages.forEach(function(p, n){ p.classList.toggle('active', n === revIdx); });
+    revDots.forEach(function(d, n){ d.classList.toggle('active', n === revIdx); });
+  }
+  document.getElementById('revPrev').addEventListener('click', function(){ goRev(revIdx - 1); });
+  document.getElementById('revNext').addEventListener('click', function(){ goRev(revIdx + 1); });
+  revDots.forEach(function(d, n){ d.addEventListener('click', function(){ goRev(n); }); });
+  setInterval(function(){ goRev(revIdx + 1); }, 7000);
+})();
+</script>
+
+</body>
+</html>
