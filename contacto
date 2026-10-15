@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | LILO HILOS</title>
+<meta name="description" content="Preguntas frecuentes, redes sociales y contacto directo con Lilo Hilos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700&display=swap">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Chivo',system-ui,sans-serif;background:#fff;color:#000;overflow-x:hidden}
+a{text-decoration:none;color:#000}
+img{display:block}
+
+/* ---- Promo ---- */
+.promo-bar{background:#D0D0D0;height:clamp(30px,2.2vw,42px);display:flex;align-items:center}
+.promo-bar p{width:100%;text-align:center;font-weight:400;font-size:clamp(11px,calc(1.39vw - 2px),16px)}
+
+/* ---- Header ---- */
+.site-header{border-bottom:1px solid #e5e5e5;background:#fff;position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:center;padding:1.6vw 2vw;gap:3vw}
+.brand{font-weight:700;font-size:clamp(18px,1.7vw,26px);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding:.35em 1em;border-radius:16px;transition:background .2s;flex-shrink:0}
+.brand:hover{background:#F0F0F0}
+.nav{display:flex;align-items:center;gap:3vw}
+.nav-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:.55em 1.2em;font-weight:500;font-size:clamp(12px,1.39vw,17px);border-radius:16px;white-space:nowrap;transition:background-color .2s ease}
+.btn-pink{background:#FFCEF0}.btn-pink:hover{background:#FFE7F8}.btn-pink:active{background:#FF55CB}
+.btn-yellow{background:#FFF5CE}.btn-yellow:hover{background:#FFFAE7}.btn-yellow:active{background:#FFDC55}
+.btn-blue{background:#CED8FF}.btn-blue:hover{background:#E7ECFF}.btn-blue:active{background:#5578FF}
+.btn-green{background:#CEFFDD}.btn-green:hover{background:#E7FFEE}.btn-green:active{background:#55FF89}
+.header-icons{display:flex;align-items:center;gap:.93vw;flex-shrink:0}
+.icon-btn{display:flex;align-items:center;justify-content:center;width:clamp(26px,2vw,34px);height:clamp(26px,2vw,34px);background:none;border:none;cursor:pointer;transition:opacity .2s;position:relative}
+.icon-btn:hover{opacity:.55}
+.icon-btn svg{width:clamp(20px,1.39vw,24px);height:clamp(20px,1.39vw,24px);fill:none;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-wrap{position:relative;display:flex;align-items:center}
+.badge{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;border-radius:8px;background:#FF55CB;color:#fff;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 4px}
+.badge.show{display:flex}
+
+/* ---- Banners ---- */
+.banner-full{width:100%;height:auto;display:block}
+
+/* ---- Títulos con línea ---- */
+.section-title{max-width:1734px;margin:4.06vw auto;padding:0 clamp(16px,4.6vw,80px);display:flex;align-items:center;gap:1.5vw}
+.section-title h2{font-weight:700;font-size:clamp(20px,2.89vw,40px);color:#6B6B6B;white-space:nowrap}
+.section-title .line{flex:1;height:1.5px;background:#CFCFCF;border-radius:2px}
+
+/* ---- FAQ (acordeón + imagen 784x784, mitad y mitad) ---- */
+.faq{max-width:1734px;margin:0 auto;padding:0 clamp(16px,4.6vw,80px);display:flex;gap:3vw;align-items:stretch;aspect-ratio:2/1}
+.faq-left{flex:1;display:flex;flex-direction:column;gap:14px}
+.faq-right{flex:1;border-radius:24px;overflow:hidden;background:#F5F0FC}
+.faq-right img{width:100%;height:100%;object-fit:cover}
+.acc-item{background:#F5F0FC;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;flex:1;min-height:0}
+.acc-item.open{flex:none}
+.acc-btn{width:100%;display:flex;align-items:center;gap:12px;padding:14px 18px;background:#F5F0FC;border:none;cursor:pointer;font-family:inherit;font-size:clamp(14px,1.25vw,17px);font-weight:600;color:#3A3A3A;text-align:left;transition:background .2s;flex-shrink:0}
+.acc-btn:hover{background:#EDE4FA}
+.acc-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#8B6FC0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.acc-arrow{margin-left:auto;flex-shrink:0;width:18px;height:18px;fill:none;stroke:#8B6FC0;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;flex-shrink:0}
+.acc-content{padding:14px 18px;font-size:clamp(13px,1.15vw,15px);color:#6B6B6B;line-height:1.65}
+.acc-item.open .acc-body{max-height:600px}
+
+/* ---- Banner deslizable de redes ---- */
+.banner-slider{position:relative;max-width:1734px;margin:5vw auto 0;overflow:hidden}
+.banner-track{display:flex;transition:transform .5s ease-in-out}
+.banner-slide{min-width:100%;aspect-ratio:1729/588;overflow:hidden}
+.banner-slide img{width:100%;height:100%;object-fit:cover}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:none;width:45px;height:45px;border-radius:50%;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.slider-arrow.prev{left:20px}
+.slider-arrow.next{right:20px}
+
+/* ---- Formulario ---- */
+.form-section{max-width:900px;margin:0 auto;padding:0 clamp(16px,4.6vw,80px) 5vw}
+.form-box{display:flex;flex-direction:column;gap:14px}
+.form-box label{font-size:14px;font-weight:600;color:#3A3A3A}
+.form-box input,.form-box textarea{width:100%;height:48px;padding:0 16px;font-family:inherit;font-size:15px;color:#6B6B6B;background:#F6F6F6;border:1.5px solid #E0E0E0;border-radius:12px;outline:none;transition:all .3s ease}
+.form-box textarea{height:140px;padding:14px 16px;resize:vertical}
+.form-box input:focus,.form-box textarea:focus{border-color:#BBB;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+.form-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-send{height:48px;padding:0 32px;font-family:inherit;font-size:15px;font-weight:600;color:#000;background:#FFCEF0;border:none;border-radius:12px;cursor:pointer;transition:all .3s ease}
+.btn-send:hover{background:#FFE7F8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,85,203,.25)}
+.btn-send:active{background:#FF55CB}
+.form-note{font-size:12px;color:#999}
+
+/* ---- Medios de pago (pegados al banner inferior) ---- */
+.payments{background:#fff;padding:14px 0;border-top:1px solid #eee}
+.payments img{width:100%;height:80px;object-fit:contain}
+
+/* ---- Footer nubes ---- */
+.footer-marquee{width:100%;background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;gap:12px;padding:22px 0}
+.marquee-row-1{display:flex;align-items:center;white-space:nowrap;animation:scrollR 60s linear infinite}
+.marquee-row-2{display:flex;align-items:center;white-space:nowrap;animation:scrollL 75s linear infinite}
+@keyframes scrollR{0%{transform:translateX(-50%)}100%{transform:translateX(0%)}}
+@keyframes scrollL{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
+.marquee-row-1 span{font-size:20px;font-weight:300;color:rgba(255,255,255,.55);padding:0 16px;letter-spacing:.04em}
+.marquee-row-1 span b{font-weight:600;color:rgba(255,255,255,.75)}
+.marquee-row-2 span{font-size:14px;font-weight:400;color:rgba(255,255,255,.5);padding:0 14px;letter-spacing:.12em;text-transform:uppercase}
+.marquee-row-2 span b{font-weight:700;color:rgba(255,255,255,.7)}
+.cloud-sep{display:inline-flex;align-items:center;margin:0 4px;opacity:.6}
+.cloud-sep svg{width:28px;height:16px}
+.marquee-copy{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.1em}
+
+/* ---- Móvil ---- */
+@media (max-width:900px){
+.header-inner{flex-wrap:wrap;gap:.8rem;padding:1rem}
+.nav{gap:.6rem;flex-wrap:wrap;justify-content:center}
+.nav-btn{min-width:140px}
+.faq{flex-direction:column;aspect-ratio:auto}
+.faq-right{width:100%;max-width:400px;margin:0 auto;aspect-ratio:1/1}
+.slider-arrow{width:36px;height:36px;font-size:16px}
+.marquee-row-1 span{font-size:16px}
+.marquee-row-2 span{font-size:11px}
+.cloud-sep svg{width:22px;height:12px}
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  <symbol id="i-chev-d" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+</svg>
+
+<div class="promo-bar"><p>Compras + $50.000 = 🚚 Envíos volados con amor SIN costo!</p></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">LILO HILOS</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="amigurumis.html" class="nav-btn btn-pink">AMIGURUMIS</a>
+      <a href="funcionales.html" class="nav-btn btn-yellow">FUNCIONALES</a>
+      <a href="blog.html" class="nav-btn btn-blue">BLOG</a>
+      <a href="contacto.html" class="nav-btn btn-green">CONTACTO</a>
+    </nav>
+    <div class="header-icons">
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Mis favoritos" onclick="alert('Los favoritos están en las páginas de productos 💛'); return false;"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></button></span>
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Carrito de compras" onclick="alert('Los pedidos se realizan por WhatsApp 💛'); return false;"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg></button></span>
+      <button class="icon-btn" id="btn-top" aria-label="Ir arriba"><svg viewBox="0 0 24 24"><use href="#i-up"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Banner superior (⚠️ verifica el nombre en img/) -->
+  <section>
+    <img class="banner-full" src="img/banner_contacto.webp" alt="Detrás de cada hilo hay una historia" fetchpriority="high">
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section id="faq">
+    <div class="section-title">
+      <div class="line"></div>
+      <h2>Estas son las preguntas que más me hacen</h2>
+      <div class="line"></div>
+    </div>
+    <div class="faq">
+      <div class="faq-left">
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">1</span>¿Cuánto tarda en llegar mi pedido?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Preparo cada amigurumi con mucho cariño, así que los pedidos salen en 2 a 4 días hábiles. El envío luego depende de tu ubicación y la opción que elijas (lo ves claramente al finalizar la compra). ¡Te mando número de seguimiento apenas sale!</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">2</span>¿Aceptan devoluciones o cambios?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Como cada pieza es hecha a mano y muchas veces personalizada, no aceptamos devoluciones, pero ¡sí ayudamos si algo no salió como esperabas! Si hay un error en tu pedido o llegó dañado, escríbeme dentro de las primeras 48 horas y lo resolvemos con cariño.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">3</span>¿Puedo personalizar mi amigurumi?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">¡Sí! Puedo bordar un nombre, ajustar colores o agregar un pequeño detalle especial (como un lazo o un corazón). Solo escríbeme antes de comprar para ver qué es posible y darte un presupuesto justo.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">4</span>¿Incluyen tarjeta o empaque para regalo?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">¡Claro! Al finalizar tu compra, puedes agregar una nota personalizada que incluiré en la caja. También ofrecemos un empaque especial para regalo (papel, etiqueta y listón) por un pequeño costo adicional. ¡Dilo en observaciones!</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">5</span>¿Respondes todos los mensajes tú misma?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">¡Sí! En Lilo Hilos no hay bots ni equipos impersonales: cada mensaje lo leo y respondo yo, Lili. Puede que tarde un par de días en contestar (trabajo aguja a aguja y mensaje a mensaje), pero nunca te dejaré sin respuesta.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">6</span>¿Enseñan a tejer amigurumis?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Por ahora, no comparto patrones ni vendo kits, porque cada diseño nace como parte de un proceso íntimo y artesanal. ¡Pero sí imparto talleres presenciales y virtuales de ganchillo para principiantes!</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">7</span>¿Agendan pedidos para fechas especiales?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">¡Por supuesto! Si necesitas tu amigurumi para un cumpleaños, aniversario o sorpresa, escríbeme con anticipación y lo preparo para que llegue a tiempo.</div></div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-btn"><span class="acc-num">8</span>¿Trabajas con regalos corporativos?<svg class="acc-arrow" viewBox="0 0 24 24"><use href="#i-chev-d"/></svg></button>
+          <div class="acc-body"><div class="acc-content">Sí, con mucho gusto. Ya he creado colecciones para empresas.</div></div>
+        </div>
+
+      </div>
+      <div class="faq-right">
+        <img src="img/preguntas.webp" alt="Amigurumi con signo de pregunta" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner deslizable de redes -->
+  <section class="banner-slider" aria-label="Redes sociales">
+    <div class="banner-track" id="bannerTrack">
+      <div class="banner-slide"><img src="img/facebook.webp" alt="Facebook de Lilo Hilos" loading="lazy"></div>
+      <div class="banner-slide"><img src="img/instagram.webp" alt="Instagram de Lilo Hilos" loading="lazy"></div>
+      <div class="banner-slide"><img src="img/tiktok.webp" alt="TikTok de Lilo Hilos" loading="lazy"></div>
+    </div>
+    <button class="slider-arrow prev" aria-label="Red social anterior">❮</button>
+    <button class="slider-arrow next" aria-label="Red social siguiente">❯</button>
+  </section>
+
+  <!-- Formulario -->
+  <section id="formulario">
+    <div class="section-title">
+      <div class="line"></div>
+      <h2>¿Algo más? Escríbeme aquí</h2>
+      <div class="line"></div>
+    </div>
+    <div class="form-section">
+      <form class="form-box" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Te responderé muy pronto 💛'); this.reset();">
+        <div>
+          <label for="f-nombre">Nombre</label>
+          <input type="text" id="f-nombre" required>
+        </div>
+        <div>
+          <label for="f-correo">Correo</label>
+          <input type="email" id="f-correo" required>
+        </div>
+        <div>
+          <label for="f-asunto">Asunto</label>
+          <input type="text" id="f-asunto" required>
+        </div>
+        <div>
+          <label for="f-mensaje">Mensaje</label>
+          <textarea id="f-mensaje" required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-send">Enviar</button>
+          <span class="form-note">Tu mensaje llega directo a Lili 💛</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Banner inferior -->
+  <section>
+    <img class="banner-full" src="img/banner_inferior_contacto.webp" alt="¡Gracias por mantenerte en contacto!" loading="lazy">
+  </section>
+
+</main>
+
+<!-- Medios de pago -->
+<section class="payments" aria-label="Métodos de pago">
+  <img src="img/medios_de_pago.webp" alt="Métodos de pago aceptados" height="80" loading="lazy">
+</section>
+
+<!-- Footer nubes -->
+<footer class="footer-marquee">
+  <div class="marquee-row-1" aria-hidden="true"><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span></div>
+  <div class="marquee-row-2" aria-hidden="true"><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span></div>
+  <span class="marquee-copy">© 2026 Lilo Hilos</span>
+</footer>
+
+<script>
+/* ---- Acordeón ---- */
+document.querySelectorAll('.acc-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    btn.parentElement.classList.toggle('open');
+  });
+});
+
+/* ---- Banner deslizable ---- */
+var track = document.getElementById('bannerTrack');
+var slides = track ? track.children.length : 0;
+var bannerIdx = 0;
+function goBanner(i){
+  bannerIdx = (i + slides) % slides;
+  if (track) track.style.transform = 'translateX(-' + (bannerIdx * 100) + '%)';
+}
+document.querySelector('.slider-arrow.prev').addEventListener('click', function(){ goBanner(bannerIdx - 1); });
+document.querySelector('.slider-arrow.next').addEventListener('click', function(){ goBanner(bannerIdx + 1); });
+setInterval(function(){ goBanner(bannerIdx + 1); }, 6000);
+
+/* ---- Botón subir arriba ---- */
+document.getElementById('btn-top').addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+</script>
+
+</body>
+</html>
