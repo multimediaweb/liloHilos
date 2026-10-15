@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funcionales | LILO HILOS</title>
+<meta name="description" content="Accesorios funcionales tejidos a mano — portalápices, bolsos, fundas y más, con alma artesanal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;500;600;700&display=swap">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Chivo',system-ui,sans-serif;background:#fff;color:#000;overflow-x:hidden}
+a{text-decoration:none;color:#000}
+img{display:block}
+
+/* ---- Promo ---- */
+.promo-bar{background:#D0D0D0;height:clamp(30px,2.2vw,42px);display:flex;align-items:center}
+.promo-bar p{width:100%;text-align:center;font-weight:400;font-size:clamp(11px,calc(1.39vw - 2px),16px)}
+
+/* ---- Header ---- */
+.site-header{border-bottom:1px solid #e5e5e5;background:#fff;position:sticky;top:0;z-index:100}
+.header-inner{display:flex;align-items:center;justify-content:center;padding:1.6vw 2vw;gap:3vw}
+.brand{font-weight:700;font-size:clamp(18px,1.7vw,26px);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;padding:.35em 1em;border-radius:16px;transition:background .2s;flex-shrink:0}
+.brand:hover{background:#F0F0F0}
+.nav{display:flex;align-items:center;gap:3vw}
+.nav-btn{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:.55em 1.2em;font-weight:500;font-size:clamp(12px,1.39vw,17px);border-radius:16px;white-space:nowrap;transition:background-color .2s ease}
+.btn-pink{background:#FFCEF0}.btn-pink:hover{background:#FFE7F8}.btn-pink:active{background:#FF55CB}
+.btn-yellow{background:#FFF5CE}.btn-yellow:hover{background:#FFFAE7}.btn-yellow:active{background:#FFDC55}
+.btn-blue{background:#CED8FF}.btn-blue:hover{background:#E7ECFF}.btn-blue:active{background:#5578FF}
+.btn-green{background:#CEFFDD}.btn-green:hover{background:#E7FFEE}.btn-green:active{background:#55FF89}
+.header-icons{display:flex;align-items:center;gap:.93vw;flex-shrink:0}
+.icon-btn{display:flex;align-items:center;justify-content:center;width:clamp(26px,2vw,34px);height:clamp(26px,2vw,34px);background:none;border:none;cursor:pointer;transition:opacity .2s;position:relative}
+.icon-btn:hover{opacity:.55}
+.icon-btn svg{width:clamp(20px,1.39vw,24px);height:clamp(20px,1.39vw,24px);fill:none;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.icon-wrap{position:relative;display:flex;align-items:center}
+.badge{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;border-radius:8px;background:#FF55CB;color:#fff;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center;padding:0 4px}
+.badge.show{display:flex}
+
+/* ---- Banners (completos, sin recorte) ---- */
+.banner-full{width:100%;height:auto;display:block}
+
+/* ---- Títulos (centrados, líneas hasta el borde) ---- */
+.section-title{max-width:1734px;margin:4.06vw auto;padding:0 clamp(16px,4.6vw,80px);display:flex;align-items:center;justify-content:center;gap:1.5vw}
+.section-title h2{font-weight:700;font-size:clamp(20px,2.89vw,40px);color:#6B6B6B;white-space:nowrap}
+.section-title .line{flex:1;height:1.5px;background:#CFCFCF;border-radius:2px}
+.title-stars{display:flex;align-items:center;justify-content:center;gap:1.5vw}
+.title-stars .stars{display:flex;gap:.4vw}
+.title-stars .stars svg{width:clamp(16px,2vw,28px);height:clamp(16px,2vw,28px);fill:#ADD8E6}
+/* Compensa el relleno inferior de la galería anterior para que el espacio sea simétrico */
+#favoritos .section-title{margin-top:2vw}
+
+/* ---- Tarjetas ---- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5vw;padding:0 clamp(16px,4.6vw,80px) 2vw;max-width:1734px;margin:0 auto}
+.card{background:#fff;border:1px solid #EEE;border-radius:20px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.card-img{position:relative;aspect-ratio:1;background:#F5F5F5;overflow:hidden;cursor:pointer}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease}
+.card-img:hover .card-overlay{opacity:1}
+.card-overlay span{color:#fff;font-size:clamp(11px,1vw,14px);text-align:center;padding:10px}
+.card-body{padding:4% 4% 5%;text-align:center}
+.card-body h3{font-weight:600;font-size:clamp(14px,1.2vw,18px);color:#222;margin-bottom:10px}
+.card-row{display:flex;align-items:center;justify-content:space-between}
+.price{font-weight:700;font-size:clamp(15px,1.4vw,21px)}
+.btn-lo-quiero{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;background:#FFCEF0;color:#000;font-family:inherit;font-weight:500;font-size:clamp(13px,1.2vw,18px);border-radius:16px;border:none;cursor:pointer;transition:background-color .2s ease}
+.btn-lo-quiero:hover{background:#FFE7F8}
+.btn-lo-quiero:active{background:#FF55CB}
+
+/* ---- Medios de pago ---- */
+.payments{background:#fff;padding:14px 0;border-top:1px solid #eee}
+.payments img{width:100%;height:80px;object-fit:contain}
+
+/* ---- Footer nubes ---- */
+.footer-marquee{width:100%;background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;gap:12px;padding:22px 0}
+.marquee-row-1{display:flex;align-items:center;white-space:nowrap;animation:scrollR 60s linear infinite}
+.marquee-row-2{display:flex;align-items:center;white-space:nowrap;animation:scrollL 75s linear infinite}
+@keyframes scrollR{0%{transform:translateX(-50%)}100%{transform:translateX(0%)}}
+@keyframes scrollL{0%{transform:translateX(0%)}100%{transform:translateX(-50%)}}
+.marquee-row-1 span{font-size:20px;font-weight:300;color:rgba(255,255,255,.55);padding:0 16px;letter-spacing:.04em}
+.marquee-row-1 span b{font-weight:600;color:rgba(255,255,255,.75)}
+.marquee-row-2 span{font-size:14px;font-weight:400;color:rgba(255,255,255,.5);padding:0 14px;letter-spacing:.12em;text-transform:uppercase}
+.marquee-row-2 span b{font-weight:700;color:rgba(255,255,255,.7)}
+.cloud-sep{display:inline-flex;align-items:center;margin:0 4px;opacity:.6}
+.cloud-sep svg{width:28px;height:16px}
+.marquee-copy{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:.1em}
+
+/* ---- Modal ---- */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:24px;max-width:900px;width:100%;max-height:92vh;overflow-y:auto;position:relative;padding:clamp(20px,3vw,40px);animation:modalIn .3s cubic-bezier(.23,1,.32,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:none;background:#F0F0F0;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:#DDD}
+.modal-brand{text-align:center;font-weight:700;font-size:clamp(22px,2.5vw,32px);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
+.modal-grid{display:flex;gap:clamp(16px,3vw,40px);align-items:flex-start}
+.modal-photo{flex:0 0 45%;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#F5F5F5}
+.modal-photo img{width:100%;height:100%;object-fit:cover}
+.modal-info{flex:1;display:flex;flex-direction:column;gap:12px}
+.modal-info h3{font-size:clamp(20px,2vw,28px);font-weight:700;color:#3A3A3A;text-align:center;margin-bottom:4px}
+.modal-actions{display:flex;flex-direction:column;gap:10px}
+.modal-btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;padding:12px 18px;border-radius:12px;border:1.5px solid #C9B8E8;background:#fff;font-family:inherit;font-size:15px;font-weight:500;color:#3A3A3A;cursor:pointer;transition:all .2s ease}
+.modal-btn:hover{background:#F5F0FC;border-color:#A98FD6}
+.modal-btn svg{width:18px;height:18px;fill:none;stroke:#8B6FC0;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.modal-btn.fav-active{background:#FFCEF0;border-color:#FF55CB}
+.modal-btn.fav-active svg{fill:#FF55CB;stroke:#FF55CB}
+.modal-desc{background:#F6F6F6;border-radius:14px;padding:16px 18px;font-size:14px;color:#6B6B6B;line-height:1.55}
+.modal-desc ul{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.modal-desc li{padding-left:16px;position:relative}
+.modal-desc li::before{content:'•';position:absolute;left:0;color:#8B6FC0;font-weight:700}
+.modal-price{text-align:center;font-size:22px;font-weight:700;margin-top:4px}
+.modal-price small{display:block;font-size:12px;font-weight:400;color:#6B6B6B}
+.modal-wa{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:12px;border:none;background:#FFCEF0;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
+.modal-wa:hover{background:#FFE7F8}
+
+/* ---- Paneles laterales (favoritos y carrito) ---- */
+.cart-panel{position:fixed;top:0;right:0;width:min(380px,100%);height:100%;background:#fff;z-index:1100;box-shadow:-8px 0 30px rgba(0,0,0,.15);transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;padding:24px}
+.cart-panel.open{transform:none}
+.cart-panel h3{font-size:20px;margin-bottom:16px}
+.cart-items{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.cart-item{display:flex;justify-content:space-between;align-items:center;background:#F6F6F6;border-radius:12px;padding:12px 14px;font-size:14px}
+.cart-item button{background:none;border:none;cursor:pointer;font-size:16px;color:#B00;padding:4px 8px}
+.cart-empty{color:#999;text-align:center;margin-top:30px;font-size:14px}
+.cart-actions{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1050;display:none}
+.cart-overlay.open{display:block}
+
+/* ---- Móvil ---- */
+@media (max-width:900px){
+.gallery{grid-template-columns:repeat(2,1fr)}
+.header-inner{flex-wrap:wrap;gap:.8rem;padding:1rem}
+.nav{gap:.6rem;flex-wrap:wrap;justify-content:center}
+.nav-btn{min-width:140px}
+.marquee-row-1 span{font-size:16px}
+.marquee-row-2 span{font-size:11px}
+.cloud-sep svg{width:22px;height:12px}
+.modal-grid{flex-direction:column}
+.modal-photo{flex:0 0 auto;width:100%;max-width:340px;margin:0 auto}
+}
+@media (max-width:500px){
+.gallery{grid-template-columns:1fr}
+.section-title h2{white-space:normal;font-size:22px;text-align:center}
+.section-title{flex-direction:column}
+.section-title .line{display:none}
+.payments img{height:60px}
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol>
+</svg>
+
+<div class="promo-bar"><p>Compras + $50.000 = 🚚 Envíos volados con amor SIN costo!</p></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">LILO HILOS</a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="amigurumis.html" class="nav-btn btn-pink">AMIGURUMIS</a>
+      <a href="funcionales.html" class="nav-btn btn-yellow">FUNCIONALES</a>
+      <a href="blog.html" class="nav-btn btn-blue">BLOG</a>
+      <a href="contacto.html" class="nav-btn btn-green">CONTACTO</a>
+    </nav>
+    <div class="header-icons">
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Mis favoritos" id="btn-fav"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg></button><span class="badge" id="fav-badge"></span></span>
+      <span class="icon-wrap"><button class="icon-btn" aria-label="Carrito de compras" id="btn-cart"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg></button><span class="badge" id="cart-badge"></span></span>
+      <button class="icon-btn" id="btn-top" aria-label="Ir arriba"><svg viewBox="0 0 24 24"><use href="#i-up"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Banner superior -->
+  <section>
+    <img class="banner-full" src="img/banner_funcionales.webp" alt="Accesorios funcionales tejidos a mano" fetchpriority="high">
+  </section>
+
+  <!-- Galería funcionales -->
+  <section id="rincon">
+    <div class="section-title">
+      <div class="line"></div>
+      <h2>Accesorios Funcionales</h2>
+      <div class="line"></div>
+    </div>
+    <div class="gallery">
+      <article class="card"><div class="card-img" data-producto="Portalápices"><img src="img/portalapices.webp" alt="Portalápices" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Portalápices</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Portalápices">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Bolso de mano"><img src="img/cartera.webp" alt="Bolso de mano" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Bolso de mano</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Bolso de mano">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Funda para móvil"><img src="img/funda_movil.webp" alt="Funda para móvil" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Funda para móvil</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Funda para móvil">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Bolsa de la compra"><img src="img/bolsa_flor.webp" alt="Bolsa de la compra" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Bolsa de la compra</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Bolsa de la compra">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Cesto para ropa"><img src="img/canasto.webp" alt="Cesto para ropa" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Cesto para ropa</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Cesto para ropa">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Alfiletero"><img src="img/alfiletero.webp" alt="Alfiletero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Alfiletero</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Alfiletero">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Alfiletero (dos)"><img src="img/alfiletero_dos.webp" alt="Alfiletero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Alfiletero</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Alfiletero (dos)">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Portalápices (dos)"><img src="img/portalapices_dos.webp" alt="Portalápices" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Portalápices</h3><div class="card-row"><span class="price">89.000</span><button class="btn-lo-quiero" data-nombre="Portalápices (dos)">Lo quiero</button></div></div></article>
+    </div>
+  </section>
+
+  <!-- Favoritos de esta categoría -->
+  <section id="favoritos">
+    <div class="section-title">
+      <div class="title-stars">
+        <div class="stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+        <h2>Favoritos de esta categoría</h2>
+        <div class="stars"><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg><svg viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+      </div>
+    </div>
+    <div class="gallery">
+      <article class="card"><div class="card-img" data-producto="Bolso de mano"><img src="img/bolso.webp" alt="Bolso de mano" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Bolso de mano</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Bolso de mano">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Llavero"><img src="img/llavero.webp" alt="Llavero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Llavero</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Llavero">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Monedero"><img src="img/monedero.webp" alt="Monedero" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Monedero</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Monedero">Lo quiero</button></div></div></article>
+      <article class="card"><div class="card-img" data-producto="Cartuchera"><img src="img/cartuchera.webp" alt="Cartuchera" width="800" height="800" loading="lazy"><div class="card-overlay"><span>Ver detalles 💛</span></div></div><div class="card-body"><h3>Cartuchera</h3><div class="card-row"><span class="price">99.000</span><button class="btn-lo-quiero" data-nombre="Cartuchera">Lo quiero</button></div></div></article>
+    </div>
+  </section>
+
+  <!-- Banner inferior -->
+  <section>
+    <img class="banner-full" src="img/banner_inferior_funcionales.webp" alt="Detalles tejidos para tu día a día" loading="lazy">
+  </section>
+
+</main>
+
+<!-- Medios de pago -->
+<section class="payments" aria-label="Métodos de pago">
+  <img src="img/medios_de_pago.webp" alt="Métodos de pago aceptados" height="80" loading="lazy">
+</section>
+
+<!-- Footer nubes -->
+<footer class="footer-marquee">
+  <div class="marquee-row-1" aria-hidden="true"><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span><span><b>Hecho a mano</b> con amor</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CEFFDD"/></svg></span><span><b>Punto por punto</b> con cariño</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#CED8FF"/></svg></span><span><b>Cada muñeco</b> es único</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFF5CE"/></svg></span><span><b>Hilos que cuentan</b> historias</span><span class="cloud-sep"><svg viewBox="0 0 40 22" fill="none"><path d="M10 18a6 6 0 0 1-.5-12 8 8 0 0 1 15.5-2A5 5 0 0 1 32 18H10z" fill="#FFCEF0"/></svg></span></div>
+  <div class="marquee-row-2" aria-hidden="true"><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>amigurumis</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>hecho a mano</span><span>·</span><span><b>Lilo Hilos</b></span><span>·</span><span>colombia</span><span>·</span></div>
+  <span class="marquee-copy">© 2026 Lilo Hilos</span>
+</footer>
+
+<!-- Modal de producto -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar ventana">✕</button>
+    <div class="modal-brand">LILO HILOS</div>
+    <div class="modal-grid">
+      <div class="modal-photo"><img id="modalImg" src="" alt="" width="480" height="480"></div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <div class="modal-actions">
+          <button class="modal-btn" id="btnFav"><svg viewBox="0 0 24 24"><use href="#i-heart"/></svg><span id="btnFavText">Agregar a favoritos</span></button>
+          <button class="modal-btn" id="btnCartAdd"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg>Agregar al carrito</button>
+          <button class="modal-btn" id="btnShare"><svg viewBox="0 0 24 24"><use href="#i-share"/></svg>Compártelo en redes</button>
+        </div>
+        <div class="modal-price"><span id="modalPrice"></span><small>precio de referencia · pedido por WhatsApp</small></div>
+        <div class="modal-desc">
+          <p id="modalDesc"></p>
+          <ul id="modalBullets"></ul>
+        </div>
+        <button class="modal-wa" id="btnWa">Lo quiero por WhatsApp 💬</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Favoritos -->
+<div class="cart-overlay" id="favOverlay"></div>
+<aside class="cart-panel" id="favPanel" aria-label="Mis favoritos">
+  <h3>Tus favoritos 💛</h3>
+  <div class="cart-items" id="favItems"><p class="cart-empty">Aún no tienes favoritos…</p></div>
+  <div class="cart-actions">
+    <button class="modal-btn" id="favClose">Seguir mirando</button>
+  </div>
+</aside>
+
+<!-- Carrito -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
+  <h3>Tu carrito 🧺</h3>
+  <div class="cart-items" id="cartItems"><p class="cart-empty">Tu carrito está vacío por ahora…</p></div>
+  <div class="cart-actions">
+    <button class="modal-wa" id="cartCheckout">Pedir por WhatsApp 💬</button>
+    <button class="modal-btn" id="cartClose">Seguir mirando</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  /* ⚠️ Número de WhatsApp pendiente */
+  var WHATSAPP = '573001234567';
+
+  /* ============ DATOS DE PRODUCTOS ============ */
+  var PRODUCTOS = {
+    'Portalápices': { img:'img/portalapices.webp', precio:'89.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman la creatividad y necesitan un compañero sonriente que organice sus colores. Perfecto para escritorios, regalo para niños o detalle que vuelve la rutina más dulce.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Bolso de mano': { img:'img/cartera.webp', precio:'89.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes buscan un compañero práctico y dulce que lleve sus esenciales con estilo. Perfecto para salir, regalo para amigas o detalle que combina funcionalidad con alma artesanal.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Funda para móvil': { img:'img/funda_movil.webp', precio:'89.000',
+      desc:'Hecha a mano en crochet de algodón, ideal para quienes quieren proteger su teléfono con estilo y suavidad. Perfecta para el día a día, regalo práctico o detalle que combina lo moderno con lo hecho a mano.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Bolsa de la compra': { img:'img/bolsa_flor.webp', precio:'89.000',
+      desc:'Hecha a mano en crochet de algodón, ideal para quienes quieren llevar sus compras con estilo, conciencia y un toque de ternura. Perfecta para el mercado, regalo sostenible o detalle que cuida del planeta y del corazón.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Cesto para ropa': { img:'img/canasto.webp', precio:'89.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes buscan orden con calma y belleza en cada rincón. Perfecto para la habitación, el baño o la lavandería, y un regalo práctico con alma artesanal.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Alfiletero': { img:'img/alfiletero.webp', precio:'89.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman tejer y necesitan un compañero dulce que guarde sus alfileres con cariño. Perfecto para tu taller, regalo para artesanas o detalle que alegra cualquier mesa de costura.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Alfiletero (dos)': { img:'img/alfiletero_dos.webp', precio:'89.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman tejer y necesitan un compañero dulce que guarde sus alfileres con cariño. Perfecto para tu taller, regalo para artesanas o detalle que alegra cualquier mesa de costura.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Portalápices (dos)': { img:'img/portalapices_dos.webp', precio:'89.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman la creatividad y necesitan un compañero sonriente que organice sus colores. Perfecto para escritorios, regalo para niños o detalle que vuelve la rutina más dulce.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Llavero': { img:'img/llavero.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes quieren llevar sus llaves con suavidad, sin ruido ni raspones. Perfecto para el día a día, regalo práctico o detalle pequeño que cuida lo esencial con cariño.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Monedero': { img:'img/monedero.webp', precio:'99.000',
+      desc:'Hecho a mano en crochet de algodón, ideal para quienes aman llevar sus monedas con estilo y ligereza. Perfecto para el bolsillo, regalo pequeño con alma o detalle que vuelve lo cotidiano un poco más tierno.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] },
+    'Cartuchera': { img:'img/cartuchera.webp', precio:'99.000',
+      desc:'Hecha a mano en crochet de algodón, ideal para guardar lápices, brochas o pequeños tesoros con orden y cariño. Perfecta para estudiantes, artistas o quienes aman llevar sus herramientas rodeadas de suavidad.',
+      bullets:['Crochet de algodón','Limpieza con paño húmedo','Incluye tarjetita personalizada (escribe tu mensaje al comprar)'] }
+  };
+
+  /* ============ MODAL ============ */
+  var overlay = document.getElementById('modalOverlay');
+  var modalImg = document.getElementById('modalImg');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalDesc = document.getElementById('modalDesc');
+  var modalBullets = document.getElementById('modalBullets');
+  var modalPrice = document.getElementById('modalPrice');
+  var productoActual = null;
+  var favoritos = [];
+  var carrito = [];
+
+  function abrirModal(nombre){
+    var p = PRODUCTOS[nombre];
+    if (!p) return;
+    productoActual = nombre;
+    modalImg.src = p.img; modalImg.alt = nombre;
+    modalTitle.textContent = nombre;
+    modalDesc.textContent = p.desc;
+    modalPrice.textContent = p.precio;
+    modalBullets.innerHTML = p.bullets.map(function(b){ return '<li>' + b + '</li>'; }).join('');
+    var esFav = favoritos.indexOf(nombre) !== -1;
+    btnFav.classList.toggle('fav-active', esFav);
+    btnFavText.textContent = esFav ? '¡Está en tus favoritos!' : 'Agregar a favoritos';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function cerrarModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.card-img').forEach(function(c){
+    c.addEventListener('click', function(){ abrirModal(c.dataset.producto); });
+  });
+  document.getElementById('modalClose').addEventListener('click', cerrarModal);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) cerrarModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ cerrarModal(); cerrarCarrito(); cerrarFavoritos(); } });
+
+  /* "Lo quiero" agrega al carrito */
+  document.querySelectorAll('.btn-lo-quiero').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var nombre = btn.dataset.nombre;
+      if (!nombre || carrito.indexOf(nombre) === -1){
+        if (nombre){ carrito.push(nombre); }
+        actualizarCarrito();
+      }
+      abrirCarrito();
+    });
+  });
+  document.getElementById('btnWa').addEventListener('click', function(){
+    if (productoActual) window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hola LILO HILOS, quiero "' + productoActual + '" 😍'), '_blank');
+  });
+
+  /* ============ FAVORITOS ============ */
+  var btnFav = document.getElementById('btnFav');
+  var btnFavText = document.getElementById('btnFavText');
+  var favPanel = document.getElementById('favPanel');
+  var favOverlay = document.getElementById('favOverlay');
+  function actualizarFavBadge(){
+    var b = document.getElementById('fav-badge');
+    if (favoritos.length){ b.textContent = favoritos.length; b.classList.add('show'); }
+    else b.classList.remove('show');
+  }
+  function actualizarFavoritos(){
+    actualizarFavBadge();
+    var zona = document.getElementById('favItems');
+    if (!favoritos.length){ zona.innerHTML = '<p class="cart-empty">Aún no tienes favoritos…</p>'; return; }
+    zona.innerHTML = favoritos.map(function(n, i){
+      return '<div class="cart-item"><span>' + n + '</span><button data-i="' + i + '" aria-label="Quitar ' + n + ' de favoritos">✕</button></div>';
+    }).join('');
+    zona.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        favoritos.splice(parseInt(btn.dataset.i),1);
+        actualizarFavoritos();
+        if (productoActual){
+          var esFav = favoritos.indexOf(productoActual) !== -1;
+          btnFav.classList.toggle('fav-active', esFav);
+          btnFavText.textContent = esFav ? '¡Está en tus favoritos!' : 'Agregar a favoritos';
+        }
+      });
+    });
+  }
+  function abrirFavoritos(){ actualizarFavoritos(); favPanel.classList.add('open'); favOverlay.classList.add('open'); }
+  function cerrarFavoritos(){ favPanel.classList.remove('open'); favOverlay.classList.remove('open'); }
+  document.getElementById('btn-fav').addEventListener('click', abrirFavoritos);
+  document.getElementById('favClose').addEventListener('click', cerrarFavoritos);
+  favOverlay.addEventListener('click', cerrarFavoritos);
+  btnFav.addEventListener('click', function(){
+    if (!productoActual) return;
+    var i = favoritos.indexOf(productoActual);
+    if (i === -1){ favoritos.push(productoActual); btnFav.classList.add('fav-active'); btnFavText.textContent = '¡Está en tus favoritos!'; }
+    else { favoritos.splice(i,1); btnFav.classList.remove('fav-active'); btnFavText.textContent = 'Agregar a favoritos'; }
+    actualizarFavoritos();
+  });
+
+  /* Compartir */
+  document.getElementById('btnShare').addEventListener('click', function(){
+    var texto = 'Mira este producto de LILO HILOS: ' + productoActual + ' 🧸 ' + location.href;
+    if (navigator.share){ navigator.share({ title:'LILO HILOS', text:texto, url:location.href }).catch(function(){}); }
+    else { navigator.clipboard.writeText(texto); alert('¡Link copiado! Ya puedes pegarlo donde quieras 💌'); }
+  });
+
+  /* ============ CARRITO ============ */
+  var cartPanel = document.getElementById('cartPanel');
+  var cartOverlay = document.getElementById('cartOverlay');
+  function actualizarCarrito(){
+    var b = document.getElementById('cart-badge');
+    if (carrito.length){ b.textContent = carrito.length; b.classList.add('show'); }
+    else b.classList.remove('show');
+    var zona = document.getElementById('cartItems');
+    if (!carrito.length){ zona.innerHTML = '<p class="cart-empty">Tu carrito está vacío por ahora…</p>'; return; }
+    zona.innerHTML = carrito.map(function(n, i){
+      return '<div class="cart-item"><span>' + n + '</span><button data-i="' + i + '" aria-label="Quitar ' + n + '">✕</button></div>';
+    }).join('');
+    zona.querySelectorAll('button').forEach(function(btn){
+      btn.addEventListener('click', function(){ carrito.splice(parseInt(btn.dataset.i),1); actualizarCarrito(); });
+    });
+  }
+  function abrirCarrito(){ cartPanel.classList.add('open'); cartOverlay.classList.add('open'); }
+  function cerrarCarrito(){ cartPanel.classList.remove('open'); cartOverlay.classList.remove('open'); }
+  document.getElementById('btn-cart').addEventListener('click', abrirCarrito);
+  document.getElementById('cartClose').addEventListener('click', cerrarCarrito);
+  cartOverlay.addEventListener('click', cerrarCarrito);
+  document.getElementById('btnCartAdd').addEventListener('click', function(){
+    if (!productoActual) return;
+    if (carrito.indexOf(productoActual) === -1){ carrito.push(productoActual); actualizarCarrito(); }
+    cerrarModal();
+    abrirCarrito();
+  });
+  document.getElementById('cartCheckout').addEventListener('click', function(){
+    if (!carrito.length){ alert('Tu carrito está vacío todavía 🧺'); return; }
+    var msg = 'Hola LILO HILOS, quiero hacer un pedido 😍\n\n' + carrito.map(function(n,i){ return (i+1) + '. ' + n; }).join('\n');
+    window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg), '_blank');
+  });
+
+  /* Botón subir arriba */
+  document.getElementById('btn-top').addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+})();
+</script>
+
+</body>
+</html>
